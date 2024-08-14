@@ -1,21 +1,24 @@
 "use client";
 
-import Image from "next/image";
-import Link from "next/link";
 import LanguageSelector from "./LanguageSelector";
 import ThemeSwitcher from "./ThemeSwitcher";
 import { useState } from "react";
-import { Close, Hamburger, Logo, Moon } from "./Icons";
+import { Close, Hamburger, Logo } from "./Icons";
+import { useTranslations } from "next-intl";
+import { Link } from "@/navigation";
+import { usePathname } from "../navigation";
 
 export default function Navbar() {
+  const t = useTranslations("navigation");
   const [isToggleNav, setIsToggleNavbar] = useState(false);
+  const activePathName = usePathname();
 
   const navMenus = [
-    { name: "Home", path: "/" },
-    { name: "About", path: "/about" },
-    { name: "Projects", path: "/projects" },
-    { name: "Leet to Lit 🔥", path: "/leet-to-lit" },
-    { name: "Grinding", path: "/grinding" },
+    { name: t("menu.home"), path: "/" },
+    { name: t("menu.about"), path: "/about" },
+    { name: t("menu.projects"), path: "/projects" },
+    { name: t("menu.leetToLit"), path: "/leet-to-lit" },
+    { name: t("menu.grinding"), path: "/grinding" },
   ];
 
   const toggleNavbar = () => {
@@ -24,7 +27,7 @@ export default function Navbar() {
 
   return (
     <nav className="max-w-10xl">
-      <div className="absolute md:flex items-center py-0 md:py-4 w-full bg-zinc-50 dark:bg-zinc-900 transition-all duration-200">
+      <div className="sticky top-0 z-50  md:flex items-center py-0 md:py-4 w-full bg-white dark:bg-zinc-900 transition-all duration-200">
         {/* Icon */}
         <div className="px-10 flex justify-between items-center flex-grow md:flex-grow-0 border-b md:border-b-0 border-b-zinc-200 dark:border-b-zinc-800 py-4 md:py-0">
           <Link href="/">
@@ -55,16 +58,23 @@ export default function Navbar() {
         >
           {/* Menu */}
           <ul className="flex flex-col md:flex-row md:gap-2 lg:gap-4 flex-grow justify-center">
-            {navMenus.map((item) => (
-              <li
-                key={item.path}
-                className="px-10 py-5 md:py-4 md:px-2 lg:px-4 hover:bg-zinc-100 hover:dark:bg-zinc-800 md:hover:dark:bg-transparent md:hover:bg-transparent cursor-pointer text-zinc-600 dark:text-zinc-300 text-sm font-normal h-full hover:textzinc9 hover:dark:text-zinc-50 hover:font-bold transition-all"
-              >
-                <Link href={item.path} key={item.path}>
-                  {item.name}
+            {navMenus.map((item) => {
+              const isActive = item.path === activePathName;
+
+              return (
+                <Link
+                  href={item.path}
+                  key={item.path}
+                  className={`px-10 py-5 md:py-4 md:px-2 lg:px-4 hover:bg-zinc-100 hover:dark:bg-zinc-800 md:hover:dark:bg-transparent md:hover:bg-transparent cursor-pointer text-sm ${
+                    isActive
+                      ? "font-bold text-zinc-900 dark:text-white"
+                      : "font-normal text-zinc-600 dark:text-zinc-300"
+                  } h-full hover:text-zinc-900 hover:dark:text-white hover:font-bold transition-all`}
+                >
+                  <span>{item.name}</span>
                 </Link>
-              </li>
-            ))}
+              );
+            })}
           </ul>
 
           {/* Right */}

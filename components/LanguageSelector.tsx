@@ -9,7 +9,10 @@ import {
 } from "./ui/dropdown-menu";
 import { DropdownMenuTrigger } from "@radix-ui/react-dropdown-menu";
 import { CaretDown, Check, Language } from "./Icons";
-import { useEffect, useState } from "react";
+import { useState, useTransition } from "react";
+import { useLocale } from "next-intl";
+import { useParams, useRouter } from "next/navigation";
+import { usePathname } from "@/navigation";
 
 const languages = [
   { name: "English", code: "en" },
@@ -18,17 +21,18 @@ const languages = [
 ];
 
 export default function LanguageSelector() {
-  const [lang, setLang] = useState("id");
+  const router = useRouter();
+  const [isPending, startTransition] = useTransition();
+  const pathName = usePathname();
+  const savedLocale = useLocale();
+  const [lang, setLang] = useState(savedLocale);
 
-  useEffect(() => {
-    var savedLang = localStorage.getItem("language");
-
-    setLang(savedLang ?? "id");
-  }, []);
-
-  useEffect(() => {
-    localStorage.setItem("language", lang);
-  }, [lang]);
+  const onLanguageChange = (lang: string) => {
+    setLang(lang);
+    startTransition(() => {
+      router.replace(`/${lang}/${pathName}`);
+    });
+  };
 
   return (
     <DropdownMenu>
@@ -58,8 +62,9 @@ export default function LanguageSelector() {
                 isActive ? "font-semibold" : "font-normal"
               }`}
               onClick={() => {
-                setLang(item.code);
+                onLanguageChange(item.code);
               }}
+              disabled={isPending}
             >
               {item.name}
               {isActive && (

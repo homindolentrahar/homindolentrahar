@@ -1,0 +1,11 @@
+{
+  "navigation": {
+    "menu": {
+      "home": "Home",
+      "about": "About",
+      "projects": "Projects",
+      "leetToLit": "Leet to Lit 🔥",
+      "grinding": "Grinding"
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "navigation": {
+    "menu": {
+      "home": "Beranda",
+      "about": "Tentang",
+      "projects": "Proyek",
+      "leetToLit": "Leet to Lit 🔥",
+      "grinding": "Belajar"
+    }
+  }
+}
