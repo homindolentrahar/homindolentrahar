@@ -11,7 +11,7 @@ import { DropdownMenuTrigger } from "@radix-ui/react-dropdown-menu";
 import { CaretDown, Check, Language } from "./Icons";
 import { useState, useTransition } from "react";
 import { useLocale } from "next-intl";
-import { useParams, useRouter } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { usePathname } from "@/navigation";
 
 const languages = [
@@ -38,11 +38,11 @@ export default function LanguageSelector() {
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <div className="flex flex-row items-center gap-2 cursor-pointer">
-          <Language className="size-5 stroke-zinc-800 dark:stroke-zinc-100" />
+          <Language className="size-5 stroke-zinc-900 dark:stroke-zinc-100" />
           <span
             className={`hidden max-md:flex min-[1440px]:flex items-center gap-2`}
           >
-            <span className="text-sm font-medium text-zinc-800 dark:text-zinc-100">
+            <span className="text-sm font-medium text-zinc-950 dark:text-zinc-100">
               {languages.find((item) => item.code === lang)?.name}
             </span>
             <CaretDown className="size-4 stroke-zinc-500 dark:stroke-zinc-100" />
@@ -68,7 +68,7 @@ export default function LanguageSelector() {
             >
               {item.name}
               {isActive && (
-                <Check className="size-4 stroke-zinc-900 dark:stroke-zinc-50" />
+                <Check className="size-4 stroke-zinc-950 dark:stroke-zinc-50" />
               )}
             </DropdownMenuItem>
           );
