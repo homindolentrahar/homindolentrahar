@@ -26,7 +26,7 @@ export default function ThemeSwitcher() {
         setTheme(theme === "dark" ? "light" : "dark");
       }}
       className={`flex h-6 w-12 shrink-0 cursor-pointer items-center rounded-full transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-950 focus-visible:ring-offset-2 focus-visible:ring-offset-white disabled:cursor-not-allowed disabled:opacity-50  dark:focus-visible:ring-slate-300 dark:focus-visible:ring-offset-slate-950 dark:data-[state=checked]:bg-slate-50 dark:data-[state=unchecked]:bg-slate-800 ${
-        isDark ? "bg-primary" : "bg-zinc-200"
+        isDark ? "bg-blue-600" : "bg-zinc-200"
       }`}
     >
       <span
@@ -35,7 +35,7 @@ export default function ThemeSwitcher() {
         }`}
       >
         {isDark ? (
-          <Moon className="size-3 fill-primary" />
+          <Moon className="size-3 fill-blue-600" />
         ) : (
           <Sun className="size-3 fill-zinc-500" />
         )}

@@ -44,7 +44,7 @@ export default async function RootLayout({
               defaultTheme="system"
               enableColorScheme
             >
-              <main className="bg-white dark:bg-zinc-900">
+              <main className="bg-white dark:bg-zinc-950">
                 {<Navbar />}
                 {children}
               </main>
