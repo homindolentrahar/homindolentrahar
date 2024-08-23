@@ -27,9 +27,13 @@ export default function Navbar() {
 
   return (
     <nav className="max-w-10xl">
-      <div className="sticky top-0 md:flex items-center py-0 md:py-4 w-full bg-white dark:bg-zinc-950 transition-all duration-200">
+      <div className="fixed top-0 z-10 md:flex items-center py-0 md:py-4 w-full bg-white dark:bg-zinc-950 border-b border-b-zinc-200 dark:border-b-zinc-800 drop-shadow-md md:drop-shadow-none transition-all duration-200">
         {/* Icon */}
-        <div className="px-10 flex justify-between items-center flex-grow md:flex-grow-0 border-b md:border-b-0 border-b-zinc-200 dark:border-b-zinc-800 py-4 md:py-0">
+        <div
+          className={`px-10 flex justify-between items-center flex-grow md:flex-grow-0 ${
+            isToggleNav ? "border-b" : "border-b-0"
+          } md:border-b-0 border-b-zinc-200 dark:border-b-zinc-800 py-4 md:py-0`}
+        >
           <Link href="/">
             <Logo
               width={40}

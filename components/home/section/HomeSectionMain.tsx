@@ -1,6 +1,6 @@
-import { SeeMore } from "@/components/Icons";
 import Image from "next/image";
-import { MainButton } from "../MainButton";
+import { Button } from "../../ui/button";
+import { ArrowUpRight } from "lucide-react";
 
 const techStackIcons = [
   "ic_android.svg",
@@ -19,7 +19,7 @@ export default function HomeSectionMain() {
           <span className="max-w-fit text-emerald-500 text-sm font-semibold px-4 py-2 bg-emerald-100 dark:bg-emerald-950 border-[1.5px] dark:border-none border-emerald-500  rounded-full">
             Available for Work
           </span>
-          <h1 className="w-fit md:w-8/12 text-5xl sm:text-6xl md:text-7xl text-zinc-900 dark:text-white font-bold">
+          <h1 className="w-fit md:w-8/12 text-5xl leading-[56px] sm:text-6xl md:text-7xl text-zinc-900 dark:text-white font-bold">
             Hello There, I'm
             <span className="bg-gradient-to-r from-blue-500 to-teal-500 dark:from-blue-600 dark:to-teal-300 text-transparent bg-clip-text">
               Rahar
@@ -32,15 +32,14 @@ export default function HomeSectionMain() {
           Development, Mobile UI Design, and Web Development.
         </p>
         <div className="flex flex-col md:flex-row gap-4 sm:gap-6 md:gap-8 items-center w-full md:max-w-fit">
-          <MainButton
-            title="View Works"
-            className="w-full md:max-w-fit"
-            icon={<SeeMore className="size-5 stroke-[1.5px]" />}
-          />
-          <MainButton
-            title="Get In Touch"
-            className="w-full md:max-w-fit bg-zinc-100 hover:bg-zinc-200 dark:bg-zinc-900 dark:hover:bg-zinc-700 text-zinc-900 dark:text-white hover:drop-shadow-none"
-          />
+          <Button className="flex flex-row gap-2 w-full md:max-w-fit">
+            View Works
+            <ArrowUpRight className="size-5 stroke-[1.5px] stroke-white" />
+          </Button>
+
+          <Button variant={"ghost"} className="w-full md:max-w-fit">
+            Get In Touch
+          </Button>
         </div>
       </div>
       <div className="w-full flex flex-col items-center gap-8 md:gap-12 lg:gap-16 lg:flex-row px-10 lg:px-[100px] xl:px-[200px] py-8 bg-zinc-950 dark:bg-zinc-900">

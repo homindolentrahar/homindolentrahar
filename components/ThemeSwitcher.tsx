@@ -2,7 +2,7 @@
 
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
-import { Moon, Sun } from "./Icons";
+import { Moon, MoonIcon, Sun, SunIcon } from "lucide-react";
 
 export default function ThemeSwitcher() {
   const [mounted, setMounted] = useState(false);
@@ -35,9 +35,9 @@ export default function ThemeSwitcher() {
         }`}
       >
         {isDark ? (
-          <Moon className="size-3 fill-blue-600" />
+          <Moon className="size-3 stroke-blue-600 fill-blue-600" />
         ) : (
-          <Sun className="size-3 fill-zinc-500" />
+          <Sun className="size-3 stroke-zinc-500" />
         )}
       </span>
     </button>
