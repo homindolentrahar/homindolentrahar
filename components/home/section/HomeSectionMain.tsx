@@ -20,7 +20,7 @@ export default function HomeSectionMain() {
             Available for Work
           </span>
           <h1 className="w-fit md:w-8/12 text-5xl leading-[56px] sm:text-6xl md:text-7xl text-zinc-900 dark:text-white font-bold">
-            Hello There, I'm
+            Hello There, I'm &nbsp;
             <span className="bg-gradient-to-r from-blue-500 to-teal-500 dark:from-blue-600 dark:to-teal-300 text-transparent bg-clip-text">
               Rahar
             </span>
