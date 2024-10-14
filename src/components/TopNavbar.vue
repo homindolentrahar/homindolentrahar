@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import Logo from "@/components/Logo.vue";
-import { h, ref } from "vue";
+import { ref } from "vue";
 import { Menu } from "@iconoir/vue";
 import ThemeSwitcher from "./ThemeSwitcher.vue";
+import { RouterLink } from "vue-router";
 
 export interface TopNavbarMenu {
   path: string;
@@ -44,17 +44,23 @@ const menus: Array<TopNavbarMenu> = [
   >
     <h1 class="text-3xl font-bold text-neutral-950 dark:text-white">h.</h1>
     <nav
-      class="flex-col md:flex-row w-full h-fit md:h-full md:w-fit items-center mx-auto gap-2 md:gap-6"
+      class="flex-col md:flex-row w-full h-fit md:h-full md:w-fit items-center mr-auto gap-2 md:gap-6"
       :class="[isMenuOpen ? 'inline-flex' : 'hidden md:flex']"
     >
-      <a
+      <RouterLink
+        :to="menu.path"
         v-for="menu in menus"
         :key="menu.path"
         :href="menu.path"
-        class="w-full md:w-fit font-medium text-neutral-500 dark:text-neutral-400 hover:text-blue-500 hover:dark:text-blue-600 transition-all duration-300 ease-in-out"
+        class="w-full md:w-fit font-medium transition-all duration-300 ease-in-out"
+        :class="[
+          menu.path === $route.path
+            ? 'text-neutral-950 dark:text-white'
+            : 'text-neutral-400 dark:text-neutral-500 hover:text-neutral-950 hover:dark:text-white',
+        ]"
       >
         {{ menu.title }}
-      </a>
+      </RouterLink>
     </nav>
     <div
       class="h-full flex flex-row gap-2"
