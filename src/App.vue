@@ -6,7 +6,7 @@ import { RouterView } from "vue-router";
 <template>
   <div class="h-screen flex flex-col">
     <TopNavbar />
-    <main class="flex-grow bg-white dark:bg-neutral-950">
+    <main class="flex-grow bg-white dark:bg-gray-950">
       <RouterView class="h-full" />
     </main>
   </div>
