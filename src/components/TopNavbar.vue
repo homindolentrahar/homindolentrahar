@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import { Menu } from "@iconoir/vue";
-import ThemeSwitcher from "./ThemeSwitcher.vue";
 import { RouterLink } from "vue-router";
+import { ThemeSwitcher } from "@/components/ui/theme-switcher";
 
 export interface TopNavbarMenu {
   path: string;
