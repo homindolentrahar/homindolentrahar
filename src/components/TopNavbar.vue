@@ -40,9 +40,11 @@ const menus: Array<TopNavbarMenu> = [
 
 <template>
   <header
-    class="flex sticky flex-col gap-4 items-start md: md:flex-row px-12 py-4 border-b md:border-none border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-950"
+    class="flex fixed w-full flex-col gap-4 items-start md:items-center md:flex-row px-12 py-4 border-b md:border-none border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-950"
   >
-    <h1 class="text-3xl font-bold text-gray-950 dark:text-white">h.</h1>
+    <RouterLink to="/" class="text-3xl font-bold text-gray-950 dark:text-white"
+      >h.</RouterLink
+    >
     <nav
       class="flex-col md:flex-row w-full h-fit md:h-full md:w-fit items-center mr-auto gap-2 md:gap-6 md:ml-16"
       :class="[isMenuOpen ? 'inline-flex' : 'hidden md:flex']"
