@@ -6,45 +6,58 @@ import WorkExperienceItem, {
 
 const tools: Array<ToolsData> = [
   {
-    icon: "/public/android.svg",
+    icon: "/android.svg",
     title: "Android",
   },
   {
-    icon: "/public/flutter.svg",
+    icon: "/flutter.svg",
     title: "Flutter",
   },
   {
-    icon: "/public/go.svg",
+    icon: "/go.svg",
     title: "Go",
   },
   {
-    icon: "/public/figma.svg",
+    icon: "/figma.svg",
     title: "Figma",
   },
 ];
 const experiences: Array<WorkExperienceItemProps> = [
   {
     title: "Mobile Developer",
-    company: "Suitmedia Digital Agency",
-    companyUrl: "google.com",
+    company: "Wesclic Indonesia Neotech",
+    companyUrl: "https://wesclic.com/",
     type: "Freelance",
     description:
-      "Develop and maintain mobile application for client, such as ITB, Sharp, EMC, and more",
+      "Develop and maintain Finmap mobile app, a financial management app for Indonesian market from scratch",
+    startYear: 2023,
+    endYear: 2024,
   },
   {
     title: "Mobile Developer",
     company: "Suitmedia Digital Agency",
-    companyUrl: "google.com",
+    companyUrl: "https://suitmedia.com/",
     type: "Freelance",
     description:
-      "Develop and maintain mobile application for client, such as ITB, Sharp, EMC, and more",
+      "Develop and maintain mobile applications for various client, such as ITB, Sharp ID, EMC Hospital, and more",
+    startYear: 2022,
+    endYear: 2024,
+  },
+  {
+    title: "Mobile Developer",
+    company: "Deptech Digital Indonesia",
+    companyUrl: "https://deptechdigital.com/",
+    type: "Fulltime",
+    description:
+      "Develop and maintain mobile applications, while also creating boilerplate to speed up development process",
+    startYear: 2024,
   },
 ];
 </script>
 
 <template>
   <section
-    class="flex justify-center items-center w-full h-[720px] bg-white dark:bg-gray-950"
+    class="flex justify-center items-center w-full py-20 lg:h-[720px] bg-white dark:bg-gray-950"
   >
     <div
       class="flex flex-col md:flex-row items-center w-10/12 gap-16 md:gap-28 mx-auto"
@@ -54,7 +67,7 @@ const experiences: Array<WorkExperienceItemProps> = [
           Experiences
         </h1>
         <p
-          class="text-sm md:text-[16px] text-gray-500 dark:text-gray-400 text-start mt-2 lg:mt-4 self-start"
+          class="text-sm md:text-[16px] text-gray-500 dark:text-gray-400 text-start mt-4 lg:mt-6 self-start"
         >
           I have experience for over a year as Mobile Developer, starting as an
           intern, then took freelance gigs at digital agency and now as a
@@ -83,7 +96,7 @@ const experiences: Array<WorkExperienceItemProps> = [
       </div>
       <div class="flex flex-col gap-4 md:gap-6 md:flex-grow w-full">
         <WorkExperienceItem
-          v-for="exp in experiences"
+          v-for="exp in experiences.sort((a, b) => b.startYear - a.startYear)"
           :key="exp.title"
           v-bind="exp"
         />

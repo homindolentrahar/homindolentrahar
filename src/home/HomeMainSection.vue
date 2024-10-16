@@ -8,10 +8,10 @@ import { Button } from "@/components/ui/button";
   >
     <div class="flex flex-col items-center w-10/12 md:w-8/12 xl:w-6/12 mx-auto">
       <span
-        class="mb-3 lg:mb-6 pb-1 border-b-[2.5px] border-teal-600 dark:border-teal-500 self-start"
+        class="mb-3 lg:mb-6 pb-1 border-b-[2.5px] border-blue-600 dark:border-blue-500 self-start"
       >
         <h5
-          class="text-sm md:text-[16px] font-semibold text-teal-600 dark:text-teal-500"
+          class="text-sm md:text-[16px] font-semibold text-blue-600 dark:text-blue-500"
         >
           Available for Work
         </h5>
