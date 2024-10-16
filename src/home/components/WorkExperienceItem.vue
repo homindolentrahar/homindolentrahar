@@ -14,7 +14,7 @@ defineProps<WorkExperienceItemProps>();
 
 <template>
   <div
-    class="flex flex-col px-6 py-4 rounded-md bg-gray-50 dark:bg-gray-900 shadow-sm dark:shadow-none transition-all duration-300 ease-in-out"
+    class="flex flex-col pt-3 pb-5 bg-white dark:bg-gray-950 border-b-2 border-gray-200 dark:border-gray-800 transition-all duration-300 ease-in-out"
   >
     <div class="flex flex-row">
       <div class="flex flex-col flex-grow">

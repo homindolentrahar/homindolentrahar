@@ -1,0 +1,78 @@
+<script lang="ts" setup>
+import { Button } from "@/components/ui/button";
+import { Download, CodeBrackets, EvPlugCharging, Network } from "@iconoir/vue";
+import type { Component } from "vue";
+
+interface Excellence {
+  icon: Component;
+  title: string;
+}
+
+const roles = [
+  "Android Developer",
+  "Flutter Developer",
+  "Frontend Developer",
+  "Backend Developer",
+  "Backend Developer",
+];
+const excellences: Array<Excellence> = [
+  {
+    icon: CodeBrackets,
+    title: "Detail Oriented",
+  },
+  {
+    icon: EvPlugCharging,
+    title: "Fast Learner",
+  },
+  {
+    icon: Network,
+    title: "Remote Battle-tested",
+  },
+];
+</script>
+
+<template>
+  <section
+    class="flex justify-center items-center w-full py-20 lg:h-[720px] bg-gradient-to-r from-blue-50 dark:from-gray-900 to-white dark:to-gray-950"
+  >
+    <div class="flex flex-col items-start w-10/12 md:w-8/12 xl:w-6/12 mx-auto">
+      <span
+        class="mb-5 text-sm text-gray-950 dark:text-white font-medium px-4 py-[6px] rounded-full border-2 border-gray-950 dark:border-white"
+        >{{ roles[0] }}</span
+      >
+      <h1 class="text-4xl md:text-5xl font-bold text-gray-950 dark:text-white">
+        Detail-oriented developer with passion for building
+        <span
+          class="bg-gradient-to-r from-pink-600 dark:from-pink-500 to-fuchsia-500 dark:to-fuchsia-400 bg-clip-text"
+          ><b class="text-transparent">beautiful</b></span
+        >
+        and
+        <span
+          class="bg-gradient-to-r from-red-600 dark:from-red-500 to-orange-500 dark:to-orange-400 bg-clip-text"
+          ><b class="text-transparent">robust</b></span
+        >
+        products.
+      </h1>
+      <Button class="flex flex-row items-center gap-1 mt-10"
+        >Download Resume
+        <Download class="size-4" />
+      </Button>
+      <div class="mt-20 grid grid-cols-3 justify-items-center w-full">
+        <div
+          v-for="item in excellences"
+          :key="item.title"
+          class="flex flex-row w-fit items-center gap-4 rounded-lg"
+        >
+          <span
+            class="p-4 rounded-lg bg-white shadow dark:bg-gray-950 dark:border dark:border-gray-800 dark:shadow-none"
+          >
+            <component :is="item.icon" class="size-4" />
+          </span>
+          <p class="font-medium text-gray-950 dark:text-white">
+            {{ item.title }}
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</template>
