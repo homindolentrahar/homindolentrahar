@@ -1,10 +1,25 @@
 <script lang="ts" setup>
 import { Button } from "@/components/ui/button";
-import { Download, CodeBrackets, EvPlugCharging, Network } from "@iconoir/vue";
+import {
+  Download,
+  CodeBrackets,
+  EvPlugCharging,
+  Network,
+  Instagram,
+  X,
+  Github,
+  Linkedin,
+} from "@iconoir/vue";
 import type { Component } from "vue";
 
 interface Excellence {
   icon: Component;
+  title: string;
+}
+
+interface ReachMeData {
+  icon: Component;
+  url: string;
   title: string;
 }
 
@@ -27,6 +42,28 @@ const excellences: Array<Excellence> = [
   {
     icon: Network,
     title: "Remote Battle-tested",
+  },
+];
+const contacts: Array<ReachMeData> = [
+  {
+    icon: Instagram,
+    url: "https://www.instagram.com/homindolentrahar",
+    title: "Instagram",
+  },
+  {
+    icon: X,
+    url: "https://www.x.com/homindolentrhar",
+    title: "X",
+  },
+  {
+    icon: Github,
+    url: "https://www.github.com/homindolentrahar",
+    title: "Github",
+  },
+  {
+    icon: Linkedin,
+    url: "https://www.linkedin.com/in/rahardiyan-eko-widiatmoko/",
+    title: "LinkedIn",
   },
 ];
 </script>
@@ -53,15 +90,36 @@ const excellences: Array<Excellence> = [
         >
         products.
       </h1>
-      <Button class="flex flex-row items-center gap-1 mt-10"
-        >Download Resume
-        <Download class="size-4" />
-      </Button>
-      <div class="mt-20 grid grid-cols-3 justify-items-center w-full">
+      <div
+        class="flex flex-col sm:flex-row w-full items-center gap-4 sm:gap-6 mt-10"
+      >
+        <Button class="flex flex-row items-center gap-1 w-full sm:w-fit"
+          >Download Resume
+          <Download class="size-4" />
+        </Button>
+        <p class="font-medium text-gray-500 dark:text-gray-400">or</p>
+        <div class="flex flex-row gap-10 sm:gap-4">
+          <a
+            target="_blank"
+            v-for="contact in contacts"
+            :key="contact.url"
+            :href="contact.url"
+          >
+            <component
+              :is="contact.icon"
+              class="size-6 text-gray-500 dark:text-gray-400 hover:text-gray-950 dark:hover:text-white transition-all duration-300 ease-in-out"
+              as-child
+            />
+          </a>
+        </div>
+      </div>
+      <div
+        class="mt-10 md:mt-16 xl:mt-20 grid gap-4 xl:gap-6 grid-cols-1 md:grid-cols-3 justify-items-center w-full"
+      >
         <div
           v-for="item in excellences"
           :key="item.title"
-          class="flex flex-row w-fit items-center gap-4 rounded-lg"
+          class="flex flex-row w-full lg:w-fit items-center gap-4 rounded-lg"
         >
           <span
             class="p-4 rounded-lg bg-white shadow dark:bg-gray-950 dark:border dark:border-gray-800 dark:shadow-none"
