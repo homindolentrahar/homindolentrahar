@@ -2,6 +2,7 @@
 import MainSection from "./HomeMainSection.vue";
 import ExperienceSection from "./HomeExperienceSection.vue";
 import ExcellenceSection from "./HomeExcellenceSection.vue";
+import HomeProjectsSection from "./HomeProjectsSection.vue";
 </script>
 
 <template>
@@ -9,5 +10,6 @@ import ExcellenceSection from "./HomeExcellenceSection.vue";
     <MainSection />
     <ExperienceSection />
     <ExcellenceSection />
+    <HomeProjectsSection />
   </main>
 </template>

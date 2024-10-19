@@ -63,7 +63,9 @@ const experiences: Array<WorkExperienceItemProps> = [
       class="flex flex-col md:flex-row items-center w-10/12 gap-16 md:gap-28 mx-auto"
     >
       <div class="flex flex-col md:flex-grow w-full">
-        <h1 class="text-5xl font-bold text-gray-950 dark:text-white">
+        <h1
+          class="text-4xl lg:text-5xl font-bold text-gray-950 dark:text-white"
+        >
           Experiences
         </h1>
         <p

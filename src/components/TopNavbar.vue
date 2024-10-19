@@ -40,7 +40,7 @@ const menus: Array<TopNavbarMenu> = [
 
 <template>
   <header
-    class="flex fixed w-full flex-col gap-4 items-start md:items-center md:flex-row px-12 py-4 border-b md:border-none border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-950"
+    class="flex fixed z-10 w-full flex-col gap-4 items-start md:items-center md:flex-row px-12 py-4 border-b md:border-none border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-950"
   >
     <RouterLink to="/" class="text-3xl font-bold text-gray-950 dark:text-white"
       >h.</RouterLink
