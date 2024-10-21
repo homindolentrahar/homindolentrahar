@@ -2,7 +2,7 @@
 
 <template>
   <div
-    class="flex flex-col p-4 h-full rounded-md border dark:border-none border-gray-200 bg-white dark:bg-gray-900 shadow-sm dark:shadow-none"
+    class="flex flex-col p-4 h-full rounded-md border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-950 shadow-sm dark:shadow-none"
   >
     <img
       src="https://images.unsplash.com/photo-1726853546098-380e29da9e31?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
