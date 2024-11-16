@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face{
+  font-family: "Satoshi";
+  src: url('/fonts/Satoshi-Regular.ttf') format('ttf');
+  font-weight: 400;
+}
+
+@font-face{
+  font-family: "Satoshi-Medium";
+  src: url('/fonts/Satoshi-Medium.ttf') format('ttf');
+  font-weight: 500;
+}
+
+@font-face{
+  font-family: "Satoshi-Bold";
+  src: url('/fonts/Satoshi-Bold.ttf') format('ttf');
+  font-weight: 700;
+}
+
+@layer base {
+  :root {
+    --radius: 0.5rem
+  }
+}
