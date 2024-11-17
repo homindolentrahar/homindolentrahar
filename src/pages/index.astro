@@ -1,22 +1,31 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import { Button } from "@/components/ui/button";
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout title="homindolentrahar">
   <main class="flex flex-col items-center">
     <div
       id="hero"
-      class="flex flex-col justify-center items-center gap-4 md:gap-6 h-[720px]"
+      class="flex flex-col justify-center items-center gap-8 md:gap-12 h-[720px] px-8"
     >
-      <h1
-        class="text-gray-950 dark:text-white text-4xl md:text-6xl font-bold text-center w-10/12 md:w-8/12"
-      >
-        Your ideas, made scrollable and fits perfectly in your hand
-      </h1>
-      <h2 class="text-gray-500 dark:text-gray-400 md:text-lg text-center">
-        I'm Rahardiyan, detail-oriented Mobile developer with a passion for
-        creating beautiful, robust, and accessible apps
-      </h2>
+      <div class="flex flex-col items-center gap-4 md:gap-6">
+        <h1
+          class="text-gray-950 dark:text-white text-4xl md:text-6xl font-bold text-center w-10/12 md:w-8/12"
+        >
+          Your ideas, made scrollable and fits perfectly in your hand
+        </h1>
+        <h2
+          class="text-gray-500 dark:text-gray-400 md:text-lg text-center w-10/12 md:w-6/12"
+        >
+          I'm Rahardiyan, detail-oriented Mobile developer with a passion for
+          creating beautiful, robust, and accessible apps
+        </h2>
+      </div>
+      <div class="flex flex-col md:flex-row gap-4 md:gap-6 w-full md:w-fit">
+        <Button>View my works</Button>
+        <Button variant="secondary">Let's work together</Button>
+      </div>
     </div>
   </main>
 </Layout>
