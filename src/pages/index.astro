@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import { Button } from "@/components/ui/button";
+import ConnectWithMe from "@/components/home/ConnectWithMe";
 ---
 
 <Layout title="homindolentrahar">
@@ -9,6 +10,10 @@ import { Button } from "@/components/ui/button";
       id="hero"
       class="flex flex-col justify-center items-center gap-8 md:gap-12 h-[720px] px-8"
     >
+      <span
+        class="px-5 py-[10px] rounded-full bg-emerald-600/15 dark:bg-emerald-500/20 text-emerald-600 dark:text-emerald-500 font-semibold"
+        >Available for Work</span
+      >
       <div class="flex flex-col items-center gap-4 md:gap-6">
         <h1
           class="text-gray-950 dark:text-white text-4xl md:text-6xl font-bold text-center w-10/12 md:w-8/12"
@@ -22,10 +27,8 @@ import { Button } from "@/components/ui/button";
           creating beautiful, robust, and accessible apps
         </h2>
       </div>
-      <div class="flex flex-col md:flex-row gap-4 md:gap-6 w-full md:w-fit">
-        <Button>View my works</Button>
-        <Button variant="secondary">Let's work together</Button>
-      </div>
+      <Button className="w-full md:w-fit">View my works</Button>
+      <ConnectWithMe client:load />
     </div>
   </main>
 </Layout>
