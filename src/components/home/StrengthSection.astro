@@ -1,0 +1,56 @@
+---
+import { CodeBracketsSquare, BrainElectricity, Network } from "iconoir-react";
+import React from "react";
+import type { SVGProps } from "react";
+
+const items: Array<{
+  index: number;
+  icon: React.FC<SVGProps<SVGSVGElement>>;
+  title: string;
+  desc: string;
+}> = [
+  {
+    index: 0,
+    icon: CodeBracketsSquare,
+    title: "Attention to Detail",
+    desc: "Less likely will miss the detail you defined before, I followed guideline and specification carefully to ensure everything is in place",
+  },
+  {
+    index: 1,
+    icon: BrainElectricity,
+    title: "Fast Learner",
+    desc: "Able to complete onboarding process quickly, and adapt to existing codebase in project within only a week to match your team’s pace",
+  },
+  {
+    index: 2,
+    icon: Network,
+    title: "Remote Battle-tested",
+    desc: "Experienced working in both WFH and Hybrid scheme for over a year, flexible hour and online communication is not a new thing",
+  },
+];
+---
+
+<div
+  id="strengths"
+  class="flex flex-col md:flex-row justify-center md:justify-between items-center gap-20 md:gap-16 w-8/12 lg:w-10/12 h-fit md:h-[480px] px-8 py-16"
+>
+  {
+    items.map((item) => {
+      const Icon = item.icon;
+
+      return (
+        <div class="flex flex-col items-center md:items-start group">
+          <span class="p-4 rounded-lg bg-gray-100 dark:bg-transparent dark:border-[1.5px] dark:border-gray-800 group-hover:animate-bounce">
+            <Icon className="text-gray-700 dark:text-gray-200" />
+          </span>
+          <h1 class="text-gray-950 dark:text-white text-2xl font-semibold mt-6">
+            {item.title}
+          </h1>
+          <p class="text-gray-500 dark:text-gray-400 mt-2 line-clamp-3 overflow-ellipsis text-center md:text-start">
+            {item.desc}
+          </p>
+        </div>
+      );
+    })
+  }
+</div>

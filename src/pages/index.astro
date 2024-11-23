@@ -1,8 +1,10 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import { Download } from "iconoir-react";
 import { Button } from "@/components/ui/button";
 import ConnectWithMe from "@/components/home/ConnectWithMe";
 import ServiceCarousel from "@/components/home/ServicesCarousel";
+import StrengthSection from "@/components/home/StrengthSection.astro";
 ---
 
 <Layout title="homindolentrahar">
@@ -28,7 +30,13 @@ import ServiceCarousel from "@/components/home/ServicesCarousel";
           creating beautiful, robust, and accessible apps
         </h2>
       </div>
-      <Button className="w-full md:w-fit">View my works</Button>
+      <div class="flex flex-col md:flex-row gap-6">
+        <Button className="w-full md:w-fit">View my works</Button>
+        <Button variant="secondary" className="w-full md:w-fit">
+          <Download />
+          Download Resume</Button
+        >
+      </div>
       <ConnectWithMe client:load />
     </div>
     <div
@@ -55,5 +63,6 @@ import ServiceCarousel from "@/components/home/ServicesCarousel";
         </p>
       </div>
     </div>
+    <StrengthSection />
   </main>
 </Layout>
