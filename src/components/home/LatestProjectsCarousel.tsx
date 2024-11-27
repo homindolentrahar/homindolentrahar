@@ -1,6 +1,7 @@
 import { getCollection, type CollectionEntry } from "astro:content";
 import { Carousel, CarouselContent, CarouselItem } from "../ui/carousel";
 import { NavArrowRight } from "iconoir-react";
+import { Button } from "../ui/button";
 
 const projects: CollectionEntry<"project">[] = await getCollection("project");
 
@@ -10,9 +11,18 @@ export default function LatestProjectsCarousel() {
       id="latest-projects"
       className="flex flex-col items-start gap-8 md:gap-12 w-full lg:w-10/12 h-fit px-8 py-16 lg:py-12"
     >
-      <h1 className="text-2xl md:text-3xl font-semibold text-gray-950 dark:text-white">
-        Latest Projects
-      </h1>
+      <div className="w-full flex flex-row items-center justify-between">
+        <h1 className="text-2xl md:text-3xl font-semibold text-gray-950 dark:text-white">
+          Latest Projects
+        </h1>
+        <Button
+          asChild
+          variant="outline"
+          className="px-4 py-2 h-fit text-sm text-gray-950 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800"
+        >
+          <a href="/works">More Projects</a>
+        </Button>
+      </div>
       <Carousel className="w-full">
         <CarouselContent>
           {projects.map((item) => (

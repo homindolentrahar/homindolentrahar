@@ -28,6 +28,19 @@ export const projectSchema = z.object({
   endDate: z.date().optional(),
 });
 
-export const categorySchema = z.object({
+export const postSchema = z.object({
   title: z.string(),
+  desc: z.string(),
+  thumbnailUrl: z.string(),
+  category: z.object({
+    slug: z.string(),
+    title: z.string(),
+  }),
+  keywords: z.array(z.string()),
+  publishedDate: z.date(),
+});
+
+export const projectCategorySchema = z.object({
+  title: z.string(),
+  projects: z.array(reference("project")),
 });
