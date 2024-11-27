@@ -2,9 +2,9 @@
 role: "Freelance Mobile Developer"
 company: "Wesclic Indonesia"
 companyUrl: "https://www.wesclic.com/"
-location: "Jakarta, Indonesia"
+location: "Remote"
 type: "Full-time"
-workScheme: "WFO"
+workScheme: "Remote"
 startDate: 2023-06-01
 endDate: 2024-07-01
 achievements: [

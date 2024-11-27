@@ -78,7 +78,7 @@ export default function ServicesCarousel(
                 </div>
                 <Button
                   variant="default"
-                  className="flex flex-row items-center gap-3 lg:hidden h-11 mt-6 w-full bg-white dark:bg-gray-950 dark:hover:bg-gray-950/85 text-gray-950 dark:text-white rounded-lg transition-colors duration-200"
+                  className="flex flex-row items-center gap-3 lg:hidden h-11 mt-6 w-full bg-white hover:bg-white/90 dark:bg-gray-950 dark:hover:bg-gray-950/85 text-gray-950 dark:text-white rounded-lg transition-colors duration-200"
                 >
                   View More
                   <NavArrowRight className="size-4 text-gray-950 dark:text-white" />

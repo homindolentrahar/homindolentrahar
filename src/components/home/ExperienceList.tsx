@@ -18,7 +18,11 @@ export default function ExperienceList() {
           (item: CollectionEntry<"experience">) =>
             item.data.type !== "Internship"
         )
-        .sort((a, b) => b.data.startDate - a.data.startDate)
+        .sort(
+          (a, b) =>
+            new Date(b.data.startDate).getTime() -
+            new Date(a.data.startDate).getTime()
+        )
         .map((item: CollectionEntry<"experience">) => (
           <AccordionItem
             key={item.id}
@@ -74,16 +78,17 @@ export default function ExperienceList() {
 
                   <AccordionContent className="flex flex-col items-start px-6">
                     <ul className="list-disc list-outside">
-                      {item.data.achievements.map(
-                        (item: string, index: number) => (
-                          <li
-                            key={index}
-                            className="text-base text-start text-gray-700 dark:text-gray-200 lg:first:mt-4"
-                          >
-                            {item}
-                          </li>
-                        )
-                      )}
+                      {item.data.achievements &&
+                        item.data.achievements.map(
+                          (achievement: string, index: number) => (
+                            <li
+                              key={index}
+                              className="text-base text-start text-gray-700 dark:text-gray-200 lg:first:mt-4"
+                            >
+                              {achievement}
+                            </li>
+                          )
+                        )}
                     </ul>
                   </AccordionContent>
                 </div>
