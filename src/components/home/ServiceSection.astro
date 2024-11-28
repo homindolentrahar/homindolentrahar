@@ -1,0 +1,26 @@
+---
+import ServiceCarousel from "@/components/home/ServicesCarousel";
+---
+
+<div
+  id="services"
+  class="flex flex-col lg:flex-row justify-center items-center gap-8 md:gap-12 w-full lg:w-9/12 h-fit lg:h-[400px] px-8 py-16 lg:py-12"
+>
+  <ServiceCarousel client:load />
+  <div class="w-full flex flex-col flex-grow items-center md:items-start gap-2">
+    <h1
+      class="text-gray-700 dark:text-gray-200 text-2xl md:text-3xl text-center md:text-start font-medium"
+    >
+      There's no such thing as perfection, there's only better <span
+        class="underline font-bold text-gray-950 dark:text-white"
+        >iteration</span
+      >
+    </h1>
+    <p class="text-gray-500 dark:text-gray-400 text-center md:text-start">
+      It's a hard pill to swallow, but the best products are built through
+      continuous improvement, refining each iteration to deliver a better
+      experience. It's an endless cycle of learning and improving, and I'm
+      enjoying it
+    </p>
+  </div>
+</div>

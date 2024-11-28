@@ -1,11 +1,9 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import { Download } from "iconoir-react";
-import { Button } from "@/components/ui/button";
-import ConnectWithMe from "@/components/home/ConnectWithMe";
-import ServiceCarousel from "@/components/home/ServicesCarousel";
+import HeroSection from "@/components/home/HeroSection.astro";
 import StrengthSection from "@/components/home/StrengthSection.astro";
-import ExperienceList from "@/components/home/ExperienceList";
+import ExperienceSection from "@/components/home/ExperienceSection.astro";
+import ServiceSection from "@/components/home/ServiceSection.astro";
 import LatestProjectsCarousel from "@/components/home/LatestProjectsCarousel";
 import BlogSection from "@/components/home/BlogSection.astro";
 import LeetSection from "@/components/home/LeetSection.astro";
@@ -13,71 +11,9 @@ import LeetSection from "@/components/home/LeetSection.astro";
 
 <Layout title="homindolentrahar">
   <main class="flex flex-col items-center">
-    <div
-      id="hero"
-      class="flex flex-col justify-center items-center gap-8 md:gap-12 h-[720px] px-8"
-    >
-      <span
-        class="px-5 py-[10px] rounded-full bg-emerald-600/15 dark:bg-emerald-500/20 text-emerald-600 dark:text-emerald-500 font-semibold"
-        >Available for Work</span
-      >
-      <div class="flex flex-col items-center gap-4 md:gap-6">
-        <h1
-          class="text-gray-950 dark:text-white text-4xl md:text-6xl font-bold text-center w-10/12 md:w-8/12"
-        >
-          Your ideas, made scrollable and fits perfectly in your hand
-        </h1>
-        <h2
-          class="text-gray-500 dark:text-gray-400 md:text-lg text-center w-10/12 md:w-6/12"
-        >
-          I'm Rahardiyan, detail-oriented Mobile developer with a passion for
-          creating beautiful, robust, and accessible apps
-        </h2>
-      </div>
-      <div class="flex flex-col md:flex-row gap-6">
-        <Button className="w-full md:w-fit">View my works</Button>
-        <Button variant="secondary" className="w-full md:w-fit">
-          <Download />
-          Download Resume</Button
-        >
-      </div>
-      <ConnectWithMe client:load />
-    </div>
-    <div
-      id="services"
-      class="flex flex-col lg:flex-row justify-center items-center gap-8 md:gap-12 w-full lg:w-9/12 h-fit lg:h-[400px] px-8 py-16 lg:py-12"
-    >
-      <ServiceCarousel client:load />
-      <div
-        class="w-full flex flex-col flex-grow items-center md:items-start gap-2"
-      >
-        <h1
-          class="text-gray-700 dark:text-gray-200 text-2xl md:text-3xl text-center md:text-start font-medium"
-        >
-          There's no such thing as perfection, there's only better <span
-            class="underline font-bold text-gray-950 dark:text-white"
-            >iteration</span
-          >
-        </h1>
-        <p class="text-gray-500 dark:text-gray-400 text-center md:text-start">
-          It's a hard pill to swallow, but the best products are built through
-          continuous improvement, refining each iteration to deliver a better
-          experience. It's an endless cycle of learning and improving, and I'm
-          enjoying it
-        </p>
-      </div>
-    </div>
-    <div
-      id="experiences"
-      class="flex flex-col items-start gap-8 md:gap-12 w-full lg:w-10/12 h-fit px-8 py-8"
-    >
-      <h1
-        class="text-2xl md:text-3xl font-semibold text-gray-950 dark:text-white"
-      >
-        Experiences
-      </h1>
-      <ExperienceList client:load />
-    </div>
+    <HeroSection />
+    <ServiceSection />
+    <ExperienceSection />
     <StrengthSection />
     <LatestProjectsCarousel client:load />
     <LeetSection />

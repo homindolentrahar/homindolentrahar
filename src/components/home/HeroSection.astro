@@ -1,0 +1,36 @@
+---
+import { Download } from "iconoir-react";
+import { Button } from "@/components/ui/button";
+import ConnectWithMe from "@/components/home/ConnectWithMe";
+---
+
+<div
+  id="hero"
+  class="flex flex-col justify-center items-center gap-8 md:gap-12 h-[720px] px-8"
+>
+  <span
+    class="px-5 py-[10px] rounded-full bg-emerald-600/15 dark:bg-emerald-500/20 text-emerald-600 dark:text-emerald-500 font-semibold"
+    >Available for Work</span
+  >
+  <div class="flex flex-col items-center gap-4 md:gap-6">
+    <h1
+      class="text-gray-950 dark:text-white text-4xl md:text-6xl font-bold text-center w-10/12 md:w-8/12"
+    >
+      Your ideas, made scrollable and fits perfectly in your hand
+    </h1>
+    <h2
+      class="text-gray-500 dark:text-gray-400 md:text-lg text-center w-10/12 md:w-6/12"
+    >
+      I'm Rahardiyan, detail-oriented Mobile developer with a passion for
+      creating beautiful, robust, and accessible apps
+    </h2>
+  </div>
+  <div class="flex flex-col md:flex-row gap-6">
+    <Button className="w-full md:w-fit">View my works</Button>
+    <Button variant="secondary" className="w-full md:w-fit">
+      <Download />
+      Download Resume</Button
+    >
+  </div>
+  <ConnectWithMe client:load />
+</div>
