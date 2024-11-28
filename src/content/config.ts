@@ -4,6 +4,7 @@ import {
   experienceSchema,
   projectSchema,
   postSchema,
+  leetSchema,
 } from "../schemas/collection_schemas";
 
 // Define collections
@@ -22,6 +23,11 @@ const blog = defineCollection({
   schema: postSchema,
 });
 
+const leet = defineCollection({
+  type: "content",
+  schema: leetSchema,
+});
+
 const projectCategory = defineCollection({
   type: "content",
   schema: projectCategorySchema,
@@ -32,4 +38,5 @@ export const collections = {
   project: project,
   projectCategory: projectCategory,
   blog: blog,
+  leet: leet,
 };

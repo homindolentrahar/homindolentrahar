@@ -44,3 +44,15 @@ export const projectCategorySchema = z.object({
   title: z.string(),
   projects: z.array(reference("project")),
 });
+
+export const leetSchema = z.object({
+  title: z.string(),
+  desc: z.string(),
+  difficulty: z.object({
+    slug: z.string(),
+    title: z.string(),
+  }),
+  tags: z.array(z.string()),
+  createdAt: z.date(),
+  updatedAt: z.date().nullable(),
+});
