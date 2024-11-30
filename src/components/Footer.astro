@@ -1,0 +1,104 @@
+---
+import { Linkedin, Mail } from "iconoir-react";
+
+const quickResources: {
+  title: string;
+  url: string;
+}[] = [
+  { title: "Download Resume", url: "" },
+  { title: "Github Repositories", url: "" },
+  { title: "Youtube Videos", url: "" },
+  { title: "Dribbble Shots", url: "" },
+];
+
+const quickNav: {
+  title: string;
+  url: string;
+}[] = [
+  { title: "Home", url: "/" },
+  { title: "About", url: "/about" },
+  { title: "Works", url: "/works" },
+  { title: "Leet", url: "/leet" },
+  { title: "Blog", url: "/blog" },
+];
+---
+
+<div
+  class="px-12 py-8 lg:px-16 lg:py-12 border-t border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-950"
+>
+  <div
+    class="w-full grid grid-cols-1 lg:grid-cols-4 content-between gap-16 lg:gap-32"
+  >
+    <div
+      class="w-full lg:w-8/12 flex flex-col items-center lg:items-start lg:col-span-3"
+    >
+      <h1
+        class="text-gray-950 dark:text-white text-2xl lg:text-3xl font-semibold"
+      >
+        Have cool ideas ready to develop?
+      </h1>
+      <p
+        class="text-gray-500 dark:text-gray-400 text-center lg:text-start mt-3"
+      >
+        Get in touch and say Hi to me, I really look forward to discuss your
+        cool ideas further. Or if you want my help with your project and other
+        things, feel free to contact me anytime!
+      </p>
+      <div class="flex flex-col items-center lg:items-start gap-4 mt-8">
+        <div class="flex flex-col items-center lg:items-start gap-2">
+          <p class="text-gray-400 dark:text-gray-500">Email me</p>
+          <a
+            href="mailto:rahardiyanekowidiatmoko@gmail.com"
+            class="text-gray-950 dark:text-white text-xl font-semibold flex flex-row items-center gap-3"
+          >
+            <Mail className="size-6" />
+            rahardiyanekowidiatmoko@gmail.com</a
+          >
+        </div>
+        <div class="flex flex-col items-center lg:items-start gap-2">
+          <p class="text-gray-400 dark:text-gray-500">Connect with me</p>
+          <div class="flex flex-row items-center gap-2">
+            <a
+              href="https://www.linkedin.com/in/rahardiyan-eko-widiatmoko/"
+              class="text-gray-950 dark:text-white text-xl font-semibold flex flex-row items-center gap-3"
+            >
+              <Linkedin className="size-6" />
+              Rahardiyan Eko Widiatmoko</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="flex flex-col items-center lg:items-start">
+      <p class="text-gray-950 dark:text-white text-xl font-semibold">
+        Quick Resources
+      </p>
+      <div
+        class="flex flex-row lg:flex-col flex-wrap justify-center gap-4 lg:gap-2 mt-4"
+      >
+        {
+          quickResources.map((item) => (
+            <a
+              href={item.url}
+              class="text-gray-400 dark:text-gray-500 hover:text-gray-950 dark:hover:text-white"
+            >
+              {item.title}
+            </a>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+  <div
+    class="mt-16 flex flex-row gap-4 justify-center lg:justify-between items-center"
+  >
+    <span class="hidden lg:flex">
+      <a href="/" class="text-3xl font-bold text-gray-950 dark:text-white">h.</a
+      >
+    </span>
+
+    <p class="text-gray-400 dark:text-gray-500">
+      Made with 🥰 by homindolentrahar
+    </p>
+  </div>
+</div>
