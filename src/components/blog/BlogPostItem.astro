@@ -1,0 +1,64 @@
+---
+import moment from "moment";
+import { NavArrowRight } from "iconoir-react";
+
+const { post } = Astro.props;
+---
+
+<div class="flex flex-col h-full">
+  <img
+    src={post.data.thumbnailUrl}
+    alt={post.data.title}
+    class="w-full h-64 rounded-t-lg"
+  />
+  <div
+    class="flex flex-col flex-grow p-4 border-[1.5px] border-gray-200 dark:border-gray-800 border-t-0 bg-white dark:bg-gray-900/25 rounded-b-lg"
+  >
+    <div class="flex flex-col flex-grow">
+      <div class="flex flex-row justify-between items-center">
+        <div class="flex flex-row gap-2">
+          <p class="text-sm text-gray-500 dark:text-gray-400">
+            {moment(post.data.publishedDate).format("DD MMM yyyy")}
+          </p>
+          <p class="text-sm text-gray-500 dark:text-gray-400">•</p>
+          <a
+            href={`/blog?category=${post.data.category.slug}`}
+            class="text-sm text-gray-500 dark:text-gray-400"
+          >
+            {post.data.category.title}
+          </a>
+        </div>
+        <div class="flex flex-row gap-1">
+          {
+            post.data.keywords
+              .slice(0, 3)
+              .map((item: string) => (
+                <span class="text-sm text-gray-400 dark:text-gray-500">
+                  #{item}
+                </span>
+              ))
+          }
+        </div>
+      </div>
+      <h1
+        class="text-xl font-bold text-gray-950 dark:text-white line-clamp-1 overflow-ellipsis mt-3"
+      >
+        {post.data.title}
+      </h1>
+      <p
+        class="text-sm text-gray-500 dark:text-gray-400 line-clamp-2 overflow-ellipsis mt-1"
+      >
+        {post.data.desc}
+      </p>
+    </div>
+    <a
+      href={`/blog/${post.slug}`}
+      class="w-fit flex flex-row items-center gap-1 text-sm font-semibold text-gray-950 dark:text-white hover:underline mt-6"
+    >
+      Read More
+      <NavArrowRight
+        className="size-4 stroke-2 text-gray-950 dark:text-white"
+      />
+    </a>
+  </div>
+</div>

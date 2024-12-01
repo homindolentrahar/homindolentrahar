@@ -6,6 +6,6 @@ category: {
   slug: "study",
   title: "Study"
 }
-keywords: ["go", "backend", "architecture"]
+keywords: ["go", "backend"]
 publishedDate: 2019-09-01
 ---
