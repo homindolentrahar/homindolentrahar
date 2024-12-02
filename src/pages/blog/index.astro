@@ -1,10 +1,10 @@
 ---
 import Layout from "@/layouts/Layout.astro";
-import { getCollection } from "astro:content";
+import { getCollection, type CollectionEntry } from "astro:content";
 import BlogPostItem from "@/components/blog/BlogPostItem.astro";
 import PaginationGroup from "@/components/PaginationGroup.astro";
 
-const posts = await getCollection("blog");
+const posts: CollectionEntry<"blog">[] = await getCollection("blog");
 ---
 
 <Layout title="About">
@@ -30,7 +30,7 @@ const posts = await getCollection("blog");
       >
         {posts.map((post) => <BlogPostItem post={post} />)}
       </div>
-      <PaginationGroup className="mt-16" />
+      {posts.length > 15 && <PaginationGroup />}
     </div>
   </main>
 </Layout>

@@ -1,0 +1,14 @@
+---
+import { cn } from "@/lib/utils";
+
+const { className } = Astro.props;
+---
+
+<div
+  class={cn(
+    className,
+    "prose prose-headings:text-gray-950 dark:prose-headings:text-white prose-blockquote:text-lg prose-blockquote:text-gray-500 dark:prose-blockquote:text-gray-400 prose-blockquote:font-normal prose-blockquote:border-gray-950 dark:prose-blockquote:border-white prose-h1:font-bold prose-h1:text-3xl prose-h2:text-2xl prose-h3:text-xl prose-li:text-gray-800 dark:prose-li:text-gray-200 prose-a:font-medium prose-a:underline prose-a:text-gray-950 dark:prose-a:text-white"
+  )}
+>
+  <slot />
+</div>

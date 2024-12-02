@@ -1,0 +1,73 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import type { GetStaticPaths } from "astro";
+import { Image } from "astro:assets";
+import type { CollectionEntry } from "astro:content";
+import { getEntry, getCollection } from "astro:content";
+import Prose from "@/components/Prose.astro";
+import moment from "moment";
+
+export const getStaticPaths = (async () => {
+  const posts: CollectionEntry<"blog">[] = await getCollection("blog");
+
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+  }));
+}) satisfies GetStaticPaths;
+
+const { slug } = Astro.params;
+const entry = await getEntry("blog", slug);
+const { Content, headings } = await entry.render();
+---
+
+<Layout title={entry?.data.title}>
+  <main class="flex flex-col">
+    <div class="flex flex-col items-center min-h-[720px] p-8 mt-16">
+      <Image
+        width={100}
+        height={100}
+        src={entry?.data.thumbnailUrl}
+        alt={entry?.data.title}
+        class="w-11/12 h-[360px] object-cover"
+      />
+      <div class="w-10/12 flex flex-col items-start mt-8">
+        <h1
+          class="text-3xl lg:text-4xl font-semibold text-gray-950 dark:text-white"
+        >
+          {entry?.data.title}
+        </h1>
+        <div
+          class="flex flex-row items-center gap-2 mt-4 text-sm md:text-base text-gray-500 dark:text-gray-400"
+        >
+          <p>
+            {
+              moment(entry?.data.publishedDate).format(
+                "ddd, DD MMMM yyyy | HH:mm"
+              )
+            }
+          </p>
+          <i>•</i>
+          <a href="#">{entry?.data.category.title}</a>
+        </div>
+        <Prose className="mt-8">
+          <Content />
+        </Prose>
+        <div class="flex flex-row items-center gap-2 mt-16">
+          {
+            entry?.data.keywords.map((word: string) => (
+              <span class="px-3 py-1 rounded-full bg-gray-950 hover:bg-gray-950/90 dark:bg-white dark:hover:bg-white/90 text-white dark:text-gray-950 text-sm font-medium cursor-pointer transition-all">
+                #{word}
+              </span>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </main>
+</Layout>
+
+<style>
+  .content :global(h1) {
+    font-size: 24;
+  }
+</style>
