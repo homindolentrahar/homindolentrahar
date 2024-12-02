@@ -1,0 +1,34 @@
+---
+import { getCollection, type CollectionEntry } from "astro:content";
+import Layout from "@/layouts/Layout.astro";
+import LeetPostItem from "@/components/leet/LeetPostItem.astro";
+
+const posts: CollectionEntry<"leet">[] = await getCollection("leet");
+---
+
+<Layout title="Leet">
+  <main class="flex flex-col">
+    <div
+      class="flex flex-col justify-start items-center p-8 mt-16 min-h-[720px]"
+    >
+      <div
+        class="flex flex-col justify-center items-center gap-4 md:gap-6 w-full md:w-8/12 lg:w-6/12"
+      >
+        <h1
+          class="text-3xl md:text-4xl font-semibold text-gray-950 dark:text-white"
+        >
+          Leet
+        </h1>
+        <p class="text-gray-500 dark:text-gray-400 text-center">
+          This is my redemption arc. I'm trying to solve LeetCode problems to
+          improve my problem-solving skills. I'll be documenting my journey
+          here, by providing the problem statement, my thought process, and the
+          final solution.
+        </p>
+      </div>
+      <div class="w-full md:w-8/12 xl:w-6/12 flex flex-col mt-8 md:mt-16">
+        {posts.map((post) => <LeetPostItem post={post} />)}
+      </div>
+    </div>
+  </main>
+</Layout>
