@@ -17,7 +17,7 @@ export const getStaticPaths = (async () => {
 
 const { slug } = Astro.params;
 const entry = await getEntry("blog", slug);
-const { Content, headings } = await entry.render();
+const { Content } = await entry.render();
 ---
 
 <Layout title={entry?.data.title}>

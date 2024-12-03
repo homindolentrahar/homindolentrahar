@@ -5,7 +5,7 @@ import {
   CarouselItem,
 } from "@/components/ui/carousel";
 import { NavArrowRight } from "iconoir-react";
-import type { HTMLAttributes, SVGProps } from "react";
+import type { HTMLAttributes } from "react";
 import { cn } from "@/lib/utils";
 import { Button } from "../ui/button";
 
