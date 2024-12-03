@@ -22,9 +22,10 @@ const posts: CollectionEntry<"leet">[] = (await getCollection("leet")).slice(
     <p
       class="text-sm md:text-base text-center lg:text-start text-gray-500 dark:text-gray-400 mt-4"
     >
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem iste et, eos
-      fugit eum reprehenderit qui tenetur architecto illum optio necessitatibus
-      incidunt dolorem assumenda iure ullam nisi. Iusto, libero sapiente!
+      This is my redemption arc. I'm trying to solve LeetCode problems to
+      improve my problem-solving skills. I'll be documenting my journey here, by
+      providing the problem statement, my thought process, and the final
+      solution.
     </p>
     <a href="/leet">
       <Button className="mt-8 w-full lg:w-fit h-fit px-14 py-[10px]"
@@ -32,21 +33,23 @@ const posts: CollectionEntry<"leet">[] = (await getCollection("leet")).slice(
       >
     </a>
   </div>
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+  <div class="grid grid-cols-1 md:grid-cols-2 items-stretch gap-4">
     {
       posts.map((post) => (
         <a
-          href="#"
+          href={`/leet/${post.slug}`}
           aria-label="link euy"
           class="block p-4 rounded-lg border border-gray-200 dark:border-gray-800 hover:shadow dark:hover:bg-gray-900 transition-all"
         >
-          <div class="flex flex-col items-start">
-            <h1 class="text-lg font-semibold text-gray-950 dark:text-white">
-              {post.data.title}
-            </h1>
-            <p class="text-sm text-gray-500 dark:text-gray-400 line-clamp-2 overflow-ellipsis">
-              {post.data.desc}
-            </p>
+          <div class="h-full flex flex-col items-start">
+            <div class="flex flex-col flex-grow items-start ">
+              <h1 class="text-lg font-semibold text-gray-950 dark:text-white">
+                {post.data.title}
+              </h1>
+              <p class="text-sm text-gray-500 dark:text-gray-400 line-clamp-2 overflow-ellipsis">
+                {post.data.desc}
+              </p>
+            </div>
             <div class="flex flex-row justify-between items-center w-full mt-4">
               <div class="flex flex-row gap-2 flex-grow">
                 {post.data.tags.map((e: string) => (

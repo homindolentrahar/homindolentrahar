@@ -1,25 +1,7 @@
 ---
+import { levelColors } from "@/constant/leet_difficulty_level";
 import { cn } from "@/lib/utils";
-
 const { post } = Astro.props;
-
-const levelColors: {
-  difficulty: string;
-  color: string;
-  bgColor: string;
-}[] = [
-  {
-    difficulty: "Easy",
-    color: "text-emerald-600",
-    bgColor: "bg-emerald-600/15",
-  },
-  {
-    difficulty: "Medium",
-    color: "text-yellow-600",
-    bgColor: "bg-yellow-600/15",
-  },
-  { difficulty: "Hard", color: "text-red-600", bgColor: "bg-red-600/15" },
-];
 ---
 
 <a href={`/leet/${post.slug}`} class="block">
