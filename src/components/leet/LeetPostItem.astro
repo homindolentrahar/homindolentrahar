@@ -2,9 +2,10 @@
 import { levelColors } from "@/constant/leet_difficulty_level";
 import { cn } from "@/lib/utils";
 const { post } = Astro.props;
+const baseUrl = import.meta.env.BASE_URL;
 ---
 
-<a href={`/leet/${post.slug}`} class="block">
+<a href={`${baseUrl}/leet/${post.slug}`} class="block">
   <span
     class="w-full flex flex-col px-4 py-6 rounded-lg border-b-[1.5px] border-gray-200 dark:border-gray-800"
   >

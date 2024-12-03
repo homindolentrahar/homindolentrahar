@@ -3,6 +3,7 @@ import { Carousel, CarouselContent, CarouselItem } from "../ui/carousel";
 import { NavArrowRight } from "iconoir-react";
 import { Button } from "../ui/button";
 
+const baseUrl = import.meta.env.BASE_URL;
 const projects: CollectionEntry<"project">[] = await getCollection("project");
 
 export default function LatestProjectsCarousel() {
@@ -20,7 +21,7 @@ export default function LatestProjectsCarousel() {
           variant="outline"
           className="px-4 py-2 h-fit text-sm text-gray-950 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800"
         >
-          <a href="/works">More Projects</a>
+          <a href={`${baseUrl}/works`}>More Projects</a>
         </Button>
       </div>
       <Carousel className="w-full">

@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import type { CollectionEntry } from "astro:content";
 import { getCollection } from "astro:content";
 
+const baseUrl = import.meta.env.BASE_URL;
 const posts: CollectionEntry<"leet">[] = (await getCollection("leet")).slice(
   0,
   4
@@ -27,7 +28,7 @@ const posts: CollectionEntry<"leet">[] = (await getCollection("leet")).slice(
       providing the problem statement, my thought process, and the final
       solution.
     </p>
-    <a href="/leet">
+    <a href={`${baseUrl}/leet`}>
       <Button className="mt-8 w-full lg:w-fit h-fit px-14 py-[10px]"
         >Explore</Button
       >
@@ -37,7 +38,7 @@ const posts: CollectionEntry<"leet">[] = (await getCollection("leet")).slice(
     {
       posts.map((post) => (
         <a
-          href={`/leet/${post.slug}`}
+          href={`${baseUrl}/leet/${post.slug}`}
           aria-label="link euy"
           class="block p-4 rounded-lg border border-gray-200 dark:border-gray-800 hover:shadow dark:hover:bg-gray-900 transition-all"
         >

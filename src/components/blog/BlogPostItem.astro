@@ -2,6 +2,7 @@
 import moment from "moment";
 import { NavArrowRight } from "iconoir-react";
 
+const baseUrl = import.meta.env.BASE_URL;
 const { post } = Astro.props;
 ---
 
@@ -22,7 +23,7 @@ const { post } = Astro.props;
           </p>
           <p class="text-sm text-gray-500 dark:text-gray-400">•</p>
           <a
-            href={`/blog?category=${post.data.category.slug}`}
+            href={`${baseUrl}/blog?category=${post.data.category.slug}`}
             class="text-sm text-gray-500 dark:text-gray-400"
           >
             {post.data.category.title}
@@ -52,7 +53,7 @@ const { post } = Astro.props;
       </p>
     </div>
     <a
-      href={`/blog/${post.slug}`}
+      href={`${baseUrl}/blog/${post.slug}`}
       class="w-fit flex flex-row items-center gap-1 text-sm font-semibold text-gray-950 dark:text-white hover:underline mt-6"
     >
       Read More

@@ -4,6 +4,7 @@ import type { CollectionEntry } from "astro:content";
 import { getCollection } from "astro:content";
 import moment from "moment";
 
+const baseUrl = import.meta.env.BASE_URL;
 const post: CollectionEntry<"blog">[] = await getCollection("blog");
 ---
 
@@ -21,7 +22,9 @@ const post: CollectionEntry<"blog">[] = await getCollection("blog");
       variant="outline"
       className="h-fit p-0 text-sm text-gray-950 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800"
     >
-      <a href="/blog" class="w-full h-full px-4 py-2">More Articles</a>
+      <a href={`${baseUrl}/blog`} class="w-full h-full px-4 py-2"
+        >More Articles</a
+      >
     </Button>
   </div>
   <div
@@ -29,7 +32,7 @@ const post: CollectionEntry<"blog">[] = await getCollection("blog");
   >
     {
       post.map((item) => (
-        <a href={`/blog/${item.slug}`} class="block">
+        <a href={`${baseUrl}/blog/${item.slug}`} class="block">
           <span class="h-full flex flex-row items-start p-4 gap-4 rounded-md border border-gray-200 dark:border-gray-800 cursor-pointer hover:shadow dark:hover:bg-gray-900 transition-all">
             <img
               src={item.data.thumbnailUrl}
