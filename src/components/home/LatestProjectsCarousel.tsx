@@ -25,37 +25,37 @@ export default function LatestProjectsCarousel() {
         </Button>
       </div>
       <Carousel className="w-full">
-        <CarouselContent>
+        <CarouselContent className="px-6 gap-6">
           {projects.map((item) => (
             <CarouselItem
               key={item.data.title}
-              className="w-full md:basis-1/2 xl:basis-1/3 flex flex-col"
+              className="w-full md:basis-1/2 xl:basis-1/3 flex flex-col p-4 rounded-lg border border-gray-200 dark:border-gray-800"
             >
               <img
                 src={item.data.thumbnailUrl}
                 alt={item.data.title}
-                className="w-full h-80 rounded-lg bg-gray-200"
+                className="w-full h-72 rounded-lg bg-gray-200"
               />
-              <div className="w-full flex flex-row justify-between mt-4">
-                <p className="text-sm font-medium">
+              <div className="w-full flex flex-row justify-between mt-3">
+                <p className="text-sm text-gray-500 dark:text-gray-400">
                   {item.data.category.title}
                 </p>
                 <p className="text-sm text-gray-500 dark:text-gray-400">
                   {item.data.stacks.join(" • ")}
                 </p>
               </div>
-              <h1 className="text-2xl font-bold mt-4 line-clamp-2 overflow-ellipsis text-gray-950 dark:text-white">
+              <h1 className="text-2xl font-bold mt-3 line-clamp-2 overflow-ellipsis text-gray-950 dark:text-white">
                 {item.data.title}
               </h1>
               <p className="text-sm text-gray-500 dark:text-gray-400 mt-1 line-clamp-3 overflow-ellipsis">
                 {item.data.desc}
               </p>
               <a
-                href="/"
-                className="flex flex-row items-center gap-2 w-fit mt-6 font-bold text-gray-950 dark:text-white hover:underline hover:underline-offset-2"
+                href={`${baseUrl}/works/${item.slug}`}
+                className="flex flex-row items-center gap-1 w-fit mt-6 text-sm font-semibold text-gray-950 dark:text-white hover:underline hover:underline-offset-2"
               >
                 View Projects
-                <NavArrowRight className="size-4" />
+                <NavArrowRight className="size-4 stroke-2 text-gray-950 dark:text-white" />
               </a>
             </CarouselItem>
           ))}
