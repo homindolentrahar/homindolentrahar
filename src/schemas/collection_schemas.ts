@@ -1,4 +1,4 @@
-import { reference, z } from "astro:content";
+import { z } from "astro:content";
 
 export const experienceSchema = z.object({
   role: z.string(),
@@ -16,6 +16,7 @@ export const projectSchema = z.object({
   title: z.string(),
   desc: z.string(),
   url: z.string().optional(),
+  projectUrl: z.string().optional(),
   thumbnailUrl: z.string(),
   images: z.array(z.string()),
   category: z.object({
@@ -26,6 +27,9 @@ export const projectSchema = z.object({
   type: z.enum(["Personal", "Professional"]),
   startDate: z.date(),
   endDate: z.date().optional(),
+  roles: z.array(z.string()),
+  services: z.array(z.string()),
+  client: z.string().optional(),
 });
 
 export const postSchema = z.object({
@@ -38,11 +42,6 @@ export const postSchema = z.object({
   }),
   keywords: z.array(z.string()),
   publishedDate: z.date(),
-});
-
-export const projectCategorySchema = z.object({
-  title: z.string(),
-  projects: z.array(reference("project")),
 });
 
 export const leetSchema = z.object({
