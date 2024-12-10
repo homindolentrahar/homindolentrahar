@@ -1,0 +1,18 @@
+---
+import AboutEducationList from "@/components/about/AboutEducationList";
+import AboutCourseList from "@/components/about/AboutCourseList";
+import { getCollection } from "astro:content";
+import type { CollectionEntry } from "astro:content";
+
+const educations: CollectionEntry<"education">[] =
+  await getCollection("education");
+
+const courses: CollectionEntry<"course">[] = await getCollection("course");
+---
+
+<div
+  class="grid grid-cols-1 lg:grid-cols-2 w-full mt-24 lg:mt-48 gap-12 lg:gap-24"
+>
+  <AboutEducationList client:load data={educations} />
+  <AboutCourseList client:load data={courses} />
+</div>

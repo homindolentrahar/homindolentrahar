@@ -1,3 +1,4 @@
+import { cn } from "@/lib/utils";
 import { Linkedin, X, Github, Instagram } from "iconoir-react";
 import React, { type SVGProps } from "react";
 
@@ -23,9 +24,14 @@ const items: Array<{
   },
 ];
 
-export default function ConnectWithMe() {
+export default function ConnectWithMe({ className }: { className?: string }) {
   return (
-    <div className="absolute  flex flex-row items-center gap-4 md:gap-6 bottom-20 md:bottom-12">
+    <div
+      className={cn(
+        className,
+        "flex flex-row items-center gap-4 md:gap-6 bottom-20 md:bottom-12"
+      )}
+    >
       {items.map((item, index) => {
         const ConnectIcon = item.icon;
 

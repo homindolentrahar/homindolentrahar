@@ -55,3 +55,29 @@ export const leetSchema = z.object({
   createdAt: z.date(),
   updatedAt: z.date().nullable(),
 });
+
+export const educationSchema = z.object({
+  title: z.string(),
+  institute: z.string(),
+  instituteUrl: z.string(),
+  startDate: z.string().transform((e) => new Date(e)),
+  endDate: z
+    .string()
+    .transform((e) => new Date(e))
+    .optional(),
+  gpa: z.number().optional(),
+  achievements: z.array(z.string()).optional(),
+});
+
+export const courseSchema = z.object({
+  title: z.string(),
+  provider: z.string(),
+  providerUrl: z.string(),
+  startDate: z.string().transform((e) => new Date(e)),
+  endDate: z
+    .string()
+    .transform((e) => new Date(e))
+    .optional(),
+  certificateUrl: z.string().optional(),
+  learnPoints: z.array(z.string()).optional(),
+});

@@ -1,10 +1,11 @@
 import { defineCollection } from "astro:content";
 import {
-  projectCategorySchema,
   experienceSchema,
   projectSchema,
   postSchema,
   leetSchema,
+  educationSchema,
+  courseSchema,
 } from "../schemas/collection_schemas";
 
 // Define collections
@@ -28,15 +29,21 @@ const leet = defineCollection({
   schema: leetSchema,
 });
 
-const projectCategory = defineCollection({
-  type: "content",
-  schema: projectCategorySchema,
+const education = defineCollection({
+  type: "data",
+  schema: educationSchema,
+});
+
+const course = defineCollection({
+  type: "data",
+  schema: courseSchema,
 });
 
 export const collections = {
   experience: experience,
   project: project,
-  projectCategory: projectCategory,
   blog: blog,
   leet: leet,
+  education: education,
+  course: course,
 };

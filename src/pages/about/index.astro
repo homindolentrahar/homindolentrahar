@@ -1,0 +1,16 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import AboutHeroSection from "@/components/about/AboutHeroSection.astro";
+import AboutEducationSection from "@/components/about/AboutEducationSection.astro";
+---
+
+<Layout title="About">
+  <main class="flex flex-col">
+    <div
+      class="flex flex-col self-center justify-start items-center px-8 py-16 mt-16 min-h-[720px] w-full md:w-10/12 xl:w-8/12"
+    >
+      <AboutHeroSection />
+      <AboutEducationSection />
+    </div>
+  </main>
+</Layout>
