@@ -20,7 +20,7 @@ export default function AboutEducationList({
         <SelectFace3d className="size-5" />
         <h1 className="text-xl font-medium">Course</h1>
       </div>
-      <Accordion type="multiple" className="w-full mt-4 lg:mt-6">
+      <Accordion type="single" collapsible className="w-full mt-4 lg:mt-6">
         {data.map((item) => (
           <AccordionItem
             key={item.id}
@@ -41,16 +41,17 @@ export default function AboutEducationList({
                 </h1>
                 <a
                   href={item.data.providerUrl}
+                  target="_blank"
                   className="underline text-lg text-gray-700 dark:text-gray-300 mt-1"
                 >
                   {item.data.provider}
                 </a>
                 <AccordionContent className="mt-4">
                   <ul className="list-disc list-outside ps-4">
-                    {item.data.learnPoints.map((item: string) => (
+                    {item.data.learnPoints?.map((item: string) => (
                       <li
                         key={item}
-                        className="text-gray-950 dark:text-white text-start"
+                        className="text-gray-950 font-normal text-base dark:text-white text-start"
                       >
                         {item}
                       </li>

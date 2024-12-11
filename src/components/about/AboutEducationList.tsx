@@ -19,7 +19,7 @@ export default function AboutEducationList({
         <CubeReplaceFace className="size-5" />
         <h1 className="text-xl font-medium">Education</h1>
       </div>
-      <Accordion type="multiple" className="w-full mt-4 lg:mt-6">
+      <Accordion type="single" collapsible className="w-full mt-4 lg:mt-6">
         {data.map((item) => (
           <AccordionItem
             key={item.id}
@@ -46,6 +46,7 @@ export default function AboutEducationList({
                 </h1>
                 <a
                   href={item.data.instituteUrl}
+                  target="_blank"
                   className="flex flex-row items-center gap-2 underline text-lg font-medium text-gray-700 dark:text-gray-300 mt-2"
                 >
                   {item.data.institute}
@@ -53,10 +54,10 @@ export default function AboutEducationList({
                 </a>
                 <AccordionContent className="mt-4">
                   <ul className="list-disc list-outside ps-4">
-                    {item.data.achievements.map((item: string) => (
+                    {item.data.achievements?.map((item: string) => (
                       <li
                         key={item}
-                        className=" text-base text-gray-950 dark:text-white text-start"
+                        className=" text-base font-normal text-gray-950 dark:text-white text-start"
                       >
                         {item}
                       </li>

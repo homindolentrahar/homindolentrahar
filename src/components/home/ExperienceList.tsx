@@ -83,7 +83,7 @@ export default function ExperienceList() {
                           (achievement: string, index: number) => (
                             <li
                               key={index}
-                              className="text-base text-start text-gray-700 dark:text-gray-200 lg:first:mt-4"
+                              className="text-base font-normal text-start text-gray-700 dark:text-gray-200 lg:first:mt-4"
                             >
                               {achievement}
                             </li>
