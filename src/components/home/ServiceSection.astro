@@ -1,12 +1,16 @@
 ---
 import ServiceCarousel from "@/components/home/ServicesCarousel";
+import type { CollectionEntry } from "astro:content";
+import { getCollection } from "astro:content";
+
+const services: CollectionEntry<"service">[] = await getCollection("service");
 ---
 
 <div
   id="services"
   class="flex flex-col lg:flex-row justify-center items-center gap-8 md:gap-12 w-full lg:w-9/12 h-fit lg:h-[400px] px-8 py-16 lg:py-12"
 >
-  <ServiceCarousel client:load />
+  <ServiceCarousel client:load data={services} />
   <div class="w-full flex flex-col flex-grow items-center md:items-start gap-2">
     <h1
       class="text-gray-700 dark:text-gray-200 text-2xl md:text-3xl text-center md:text-start font-medium"
