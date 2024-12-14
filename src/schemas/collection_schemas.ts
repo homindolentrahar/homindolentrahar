@@ -81,3 +81,25 @@ export const courseSchema = z.object({
   certificateUrl: z.string().optional(),
   learnPoints: z.array(z.string()).optional(),
 });
+
+export const serviceSchema = z.object({
+  title: z.string(),
+  desc: z.string(),
+  stacks: z.array(
+    z.object({
+      slug: z.string(),
+      title: z.string(),
+      icon: z.string().optional(),
+    })
+  ),
+  workingProcess: z
+    .array(
+      z.object({
+        icon: z.string().optional(),
+        title: z.string(),
+        desc: z.string(),
+      })
+    )
+    .optional(),
+  categorySlug: z.string(),
+});

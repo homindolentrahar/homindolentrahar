@@ -1,0 +1,34 @@
+{
+  "title": "UI/UX Design",
+  "desc": "I design user interfaces that are easy to use and visually appealing. I create wireframes, mockups, and prototypes to help you visualize the final product.",
+  "categorySlug": "mobile",
+  "stacks": [
+    {
+      "slug": "figma",
+      "title": "Figma",
+      "icon": "ic_figma.svg"
+    }
+  ],
+  "workingProcess": [
+    {
+      "title": "Requirement Analysis",
+      "desc": "Lorem ipsum dolor sit amet"
+    },
+    {
+      "title": "Design",
+      "desc": "Lorem ipsum dolor sit amet"
+    },
+    {
+      "title": "Development",
+      "desc": "Lorem ipsum dolor sit amet"
+    },
+    {
+      "title": "Testing",
+      "desc": "Lorem ipsum dolor sit amet"
+    },
+    {
+      "title": "Deployment",
+      "desc": "Lorem ipsum dolor sit amet"
+    }
+  ]
+}

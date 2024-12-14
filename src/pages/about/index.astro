@@ -1,13 +1,16 @@
 ---
+import { getCollection } from "astro:content";
+import type { CollectionEntry } from "astro:content";
+
 import Layout from "@/layouts/Layout.astro";
 import AboutHeroSection from "@/components/about/AboutHeroSection.astro";
 import AboutEducationSection from "@/components/about/AboutEducationSection.astro";
 import AboutExperiencesSection from "@/components/about/AboutExperiencesSection";
-import { getCollection } from "astro:content";
-import type { CollectionEntry } from "astro:content";
+import AboutServicesSection from "@/components/about/AboutServicesSection";
 
 const experiences: CollectionEntry<"experience">[] =
   await getCollection("experience");
+const services: CollectionEntry<"service">[] = await getCollection("service");
 ---
 
 <Layout title="About">
@@ -18,6 +21,7 @@ const experiences: CollectionEntry<"experience">[] =
       <AboutHeroSection />
       <AboutEducationSection />
       <AboutExperiencesSection client:load data={experiences} />
+      <AboutServicesSection client:load data={services} />
     </div>
   </main>
 </Layout>

@@ -1,0 +1,49 @@
+{
+  "title": "Front-End Development",
+  "desc": "I learn front-end development to create a user-friendly interface for the web applications.",
+  "categorySlug": "mobile",
+  "stacks": [
+    {
+      "slug": "typescript",
+      "title": "Typescript",
+      "icon": "ic_typescript.svg"
+    },
+    {
+      "slug": "nextjs",
+      "title": "NextJS",
+      "icon": "ic_next_js.svg"
+    },
+    {
+      "slug": "svelte",
+      "title": "Svelte",
+      "icon": "ic_svelte.svg"
+    },
+    {
+      "slug": "tailwindcss",
+      "title": "Tailwind CSS",
+      "icon": "ic_tailwind.svg"
+    }
+  ],
+  "workingProcess": [
+    {
+      "title": "Requirement Analysis",
+      "desc": "Lorem ipsum dolor sit amet"
+    },
+    {
+      "title": "Design",
+      "desc": "Lorem ipsum dolor sit amet"
+    },
+    {
+      "title": "Development",
+      "desc": "Lorem ipsum dolor sit amet"
+    },
+    {
+      "title": "Testing",
+      "desc": "Lorem ipsum dolor sit amet"
+    },
+    {
+      "title": "Deployment",
+      "desc": "Lorem ipsum dolor sit amet"
+    }
+  ]
+}

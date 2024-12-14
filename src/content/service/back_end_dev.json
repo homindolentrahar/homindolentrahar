@@ -1,0 +1,44 @@
+{
+  "title": "Back-End Development",
+  "desc": "I am learning back-end development and I am currently working on a project that uses Go and PostgreSQL.",
+  "categorySlug": "mobile",
+  "stacks": [
+    {
+      "slug": "go",
+      "title": "Go",
+      "icon": "ic_go.svg"
+    },
+    {
+      "slug": "postgresql",
+      "title": "PostgreSQL",
+      "icon": "ic_postgresql.svg"
+    }
+  ],
+  "workingProcess": [
+    {
+      "icon": "🔎",
+      "title": "Requirement Analysis",
+      "desc": "Lorem ipsum dolor sit amet"
+    },
+    {
+      "icon": "🎨",
+      "title": "Design",
+      "desc": "Lorem ipsum dolor sit amet"
+    },
+    {
+      "icon": "🛠️",
+      "title": "Development",
+      "desc": "Lorem ipsum dolor sit amet"
+    },
+    {
+      "icon": "🧪",
+      "title": "Testing",
+      "desc": "Lorem ipsum dolor sit amet"
+    },
+    {
+      "icon": "🚀",
+      "title": "Deployment",
+      "desc": "Lorem ipsum dolor sit amet"
+    }
+  ]
+}

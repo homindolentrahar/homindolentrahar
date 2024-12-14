@@ -6,6 +6,7 @@ import {
   leetSchema,
   educationSchema,
   courseSchema,
+  serviceSchema,
 } from "../schemas/collection_schemas";
 
 // Define collections
@@ -39,6 +40,11 @@ const course = defineCollection({
   schema: courseSchema,
 });
 
+const service = defineCollection({
+  type: "data",
+  schema: serviceSchema,
+});
+
 export const collections = {
   experience: experience,
   project: project,
@@ -46,4 +52,5 @@ export const collections = {
   leet: leet,
   education: education,
   course: course,
+  service: service,
 };
