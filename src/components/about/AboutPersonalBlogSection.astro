@@ -1,0 +1,38 @@
+---
+import type { CollectionEntry } from "astro:content";
+import { getCollection } from "astro:content";
+import BlogPostItem from "../blog/BlogPostItem.astro";
+import { Button } from "../ui/button";
+import { cn } from "@/lib/utils";
+
+const baseUrl = import.meta.env.BASE_URL;
+const personalBlog: CollectionEntry<"blog">[] = await getCollection(
+  "blog",
+  ({ data }) => {
+    return data.type === "Personal";
+  }
+);
+---
+
+<div
+  class={cn(
+    "w-full flex flex-col items-center mt-12 lg:mt-24",
+    personalBlog.length < 1 && "hidden"
+  )}
+>
+  <h1
+    class="text-2xl lg:text-3xl font-semibold text-gray-950 dark:text-white text-center"
+  >
+    Personal Blog
+  </h1>
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-8 mt-8 md:mt-16">
+    {personalBlog.map((item) => <BlogPostItem post={item} />)}
+  </div>
+  <a href={`${baseUrl}/blog`}>
+    <Button
+      variant="outline"
+      className={cn("w-fit mt-6 md:mt-12", personalBlog.length < 3 && "hidden")}
+      >Show More</Button
+    >
+  </a>
+</div>

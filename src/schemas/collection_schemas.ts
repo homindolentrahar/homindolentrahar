@@ -41,6 +41,7 @@ export const postSchema = z.object({
     title: z.string(),
   }),
   keywords: z.array(z.string()),
+  type: z.enum(["Personal", "Professional"]).optional(),
   publishedDate: z.date(),
 });
 

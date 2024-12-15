@@ -9,6 +9,7 @@ import AboutExperiencesSection from "@/components/about/AboutExperiencesSection"
 import AboutServicesSection from "@/components/about/AboutServicesSection";
 import AboutServicesItem from "@/components/about/AboutServicesItem";
 import { CarouselItem } from "@/components/ui/carousel";
+import AboutPersonalBlogSection from "@/components/about/AboutPersonalBlogSection.astro";
 
 const experiences: CollectionEntry<"experience">[] =
   await getCollection("experience");
@@ -24,6 +25,7 @@ const services: CollectionEntry<"service">[] = await getCollection("service");
       <AboutEducationSection />
       <AboutExperiencesSection client:load data={experiences} />
       <AboutServicesSection client:load data={services} />
+      <AboutPersonalBlogSection />
     </div>
   </main>
 </Layout>
