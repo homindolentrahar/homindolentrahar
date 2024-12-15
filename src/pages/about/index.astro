@@ -7,6 +7,8 @@ import AboutHeroSection from "@/components/about/AboutHeroSection.astro";
 import AboutEducationSection from "@/components/about/AboutEducationSection.astro";
 import AboutExperiencesSection from "@/components/about/AboutExperiencesSection";
 import AboutServicesSection from "@/components/about/AboutServicesSection";
+import AboutServicesItem from "@/components/about/AboutServicesItem";
+import { CarouselItem } from "@/components/ui/carousel";
 
 const experiences: CollectionEntry<"experience">[] =
   await getCollection("experience");

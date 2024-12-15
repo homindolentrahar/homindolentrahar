@@ -2,6 +2,7 @@
   "title": "Back-End Development",
   "desc": "I am learning back-end development and I am currently working on a project that uses Go and PostgreSQL.",
   "categorySlug": "mobile",
+  "priority": 3,
   "stacks": [
     {
       "slug": "go",

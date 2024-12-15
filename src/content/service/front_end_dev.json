@@ -2,6 +2,7 @@
   "title": "Front-End Development",
   "desc": "I learn front-end development to create a user-friendly interface for the web applications.",
   "categorySlug": "mobile",
+  "priority": 2,
   "stacks": [
     {
       "slug": "typescript",

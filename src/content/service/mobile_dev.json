@@ -2,6 +2,7 @@
   "title": "Mobile Development",
   "desc": "I develop mobile applications for Android and iOS platforms using native and cross-platform frameworks.",
   "categorySlug": "mobile",
+  "priority": 1,
   "stacks": [
     {
       "slug": "android-native",

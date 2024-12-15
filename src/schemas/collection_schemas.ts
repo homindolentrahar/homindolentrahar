@@ -85,6 +85,7 @@ export const courseSchema = z.object({
 export const serviceSchema = z.object({
   title: z.string(),
   desc: z.string(),
+  priority: z.number(),
   stacks: z.array(
     z.object({
       slug: z.string(),

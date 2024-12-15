@@ -2,6 +2,7 @@
   "title": "UI/UX Design",
   "desc": "I design user interfaces that are easy to use and visually appealing. I create wireframes, mockups, and prototypes to help you visualize the final product.",
   "categorySlug": "mobile",
+  "priority": 4,
   "stacks": [
     {
       "slug": "figma",
