@@ -1,0 +1,64 @@
+---
+import { MoveRight } from "lucide-astro";
+
+interface LeetItem {
+  title: string;
+  slug: string;
+  difficulty: string;
+  tags: string[];
+}
+
+const items: LeetItem[] = [
+  {
+    title: "Two Sum",
+    slug: "two-sum",
+    difficulty: "Easy",
+    tags: ["Array", "Hash Table"],
+  },
+  {
+    title: "Two Sum",
+    slug: "two-sum",
+    difficulty: "Easy",
+    tags: ["Array", "Hash Table"],
+  },
+  {
+    title: "Two Sum",
+    slug: "two-sum",
+    difficulty: "Easy",
+    tags: ["Array", "Hash Table"],
+  },
+];
+---
+
+<div id="leet" class="flex flex-col py-6">
+  <h1 class="text-3xl font-semibold">Leet</h1>
+  <p class="text-sm text-gray-500 mt-4">
+    A redemption arc, realizing that the main goal of developer is not creating
+    beautifu app or fancy tools, but rather solving problems.
+  </p>
+  <div class="flex flex-col mt-6 gap-2">
+    {
+      items.map((item) => (
+        <div class="pb-3 rounded-sm border-b border-gray-200 last:border-b-transparent flex flex-row gap-4 items-center">
+          <div class="flex flex-col justify-start grow">
+            <a
+              href={`leet/${item.slug}`}
+              class="font-semibold hover:underline underline-offset-4"
+            >
+              {item.title}
+            </a>
+            <p class="text-sm text-gray-500">Tags: {item.tags.join(", ")}</p>
+          </div>
+          <p class="text-sm font-semibold">{item.difficulty}</p>
+        </div>
+      ))
+    }
+  </div>
+  <a
+    href="/leet"
+    class="w-fit font-semibold leading-[18px] text-black flex flex-row items-end gap-1 mt-6 hover:underline underline-offset-4 transition-all duration-200"
+  >
+    All journey
+    <MoveRight class="size-4" />
+  </a>
+</div>
