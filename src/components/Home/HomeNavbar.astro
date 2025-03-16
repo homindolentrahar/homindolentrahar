@@ -16,6 +16,10 @@ const menus: HomeNavbarMenu[] = [
     path: "about",
   },
   {
+    title: "Experience",
+    path: "experience",
+  },
+  {
     title: "Leet",
     path: "leet",
   },
@@ -27,7 +31,7 @@ const menus: HomeNavbarMenu[] = [
 ---
 
 <nav
-  class="bg-white border-b border-gray-100 w-full flex flex-row sticky top-0 z-50"
+  class="bg-white border-b border-gray-100 w-full flex flex-row fixed top-0 z-50"
 >
   {
     menus.map((menu) => (

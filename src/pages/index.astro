@@ -4,14 +4,16 @@ import HomeHeroSection from "../components/Home/HomeHeroSection.astro";
 import HomeNavbar from "../components/Home/HomeNavbar.astro";
 import HomeWorksSection from "../components/Home/HomeWorksSection.astro";
 import HomeAboutSection from "../components/Home/HomeAboutSection.astro";
+import HomeExpSection from "../components/Home/HomeExpSection.astro";
 ---
 
 <Layout>
   <HomeNavbar />
-  <section class="flex flex-col">
+  <section class="flex flex-col mt-8">
     <HomeHeroSection />
     <HomeWorksSection />
     <HomeAboutSection />
+    <HomeExpSection />
     <div class="h-[720px] bg-gray-50"></div>
   </section>
 </Layout>

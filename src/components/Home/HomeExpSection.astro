@@ -1,0 +1,87 @@
+---
+import { toLocaleDateString } from "../../utils/dateUtils";
+
+interface ExperienceItem {
+  company: string;
+  companyUrl: string;
+  position: string;
+  employmentType: string;
+  startDate: Date;
+  endDate?: Date;
+  description: string[];
+}
+
+const experiences: ExperienceItem[] = [
+  {
+    company: "Deptech Digital Indonesia",
+    companyUrl: "https://deptechdigital.com/",
+    position: "Mobile Developer",
+    employmentType: "Full-time",
+    startDate: new Date("2024-09-17"),
+    endDate: new Date("2025-02-07"),
+    description: [
+      "Develop new boilerplate code generator with required config and dependencies, reducing setup and development time by 35%",
+      "Implement Clean Architecture and MVVM pattern, improving code readability and maintainability",
+      "Integrate CI/CD pipeline with CodeMagic, reducing manual build time and increasing deployment target coverage",
+    ],
+  },
+  {
+    company: "Wesclic Indonesia",
+    companyUrl: "https://wesclic.com/",
+    position: "Mobile Developer",
+    employmentType: "Freelance",
+    startDate: new Date("2023-06-01"),
+    endDate: new Date("2024-07-01"),
+    description: [
+      "Develop all feature from scratch, including UI/UX design's slicing, API integration, and bug fixing",
+      "Define and implement Architecture and coding standards for the project",
+      "Implement asynchronous data fetching and caching, reducing loading time by 25% with non-blocking UI",
+    ],
+  },
+  {
+    company: "Suitmedia Digital Agency",
+    companyUrl: "https://suitmedia.com/",
+    position: "Mobile Developer",
+    employmentType: "Freelance",
+    startDate: new Date("2023-12-01"),
+    endDate: new Date("2024-03-01"),
+    description: [
+      "Implement asynchronous data fetching and caching, reducing loading data time by 20% with non-blocking UI",
+      "Deliver new features, increasing user engagement by 15%",
+      "Maintain 3y+ legacy codebase, improving code quality and performance and reducing bug report by 20%",
+    ],
+  },
+];
+---
+
+<div id="experience" class="flex flex-col py-16">
+  <h1 class="text-3xl font-semibold">Experience</h1>
+  <div class="flex flex-col gap-y-4 mt-6">
+    {
+      experiences
+        .sort((a, b) => a.startDate.getDate() - b.startDate.getDate())
+        .map((item) => (
+          <div class="grid grid-cols-[0.4fr_1fr] gap-x-16">
+            <a
+              href={item.companyUrl}
+              target="_blank"
+              class="font-medium hover:underline underline-offset-4 transition-all duration-200"
+            >
+              {item.company}
+            </a>
+            <div>
+              <p class="font-medium">{item.position}</p>
+              <p class="text-sm text-gray-500">
+                {`${toLocaleDateString(item.startDate)} - ${item.endDate ? toLocaleDateString(item.endDate) : "Present"} • ${item.employmentType}`}
+              </p>
+              <ul class="list-disc ps-6 text-sm mt-1">
+                {item.description.map((desc) => (
+                  <li>{desc}</li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        ))
+    }
+  </div>
+</div>
