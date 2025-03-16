@@ -1,0 +1,35 @@
+---
+interface FooterLink {
+  title: string;
+  url: string;
+}
+
+const links: FooterLink[] = [
+  { title: "Github", url: "https://github.com/homindolentrahar" },
+  { title: "Instagram", url: "https://www.instagram.com/homindolentrahar/" },
+  { title: "Twitter", url: "https://twitter.com/homindolentrhar" },
+  {
+    title: "LinkedIn",
+    url: "https://www.linkedin.com/in/rahardiyan-eko-widiatmoko/",
+  },
+];
+---
+
+<footer
+  class="p-4 border-t border-gray-200 w-full flex flex-row justify-between"
+>
+  <p class="text-sm">© 2025 - homindolentrahar</p>
+  <div class="flex flex-row gap-4">
+    {
+      links.map((item) => (
+        <a
+          href={item.url}
+          target="_blank"
+          class="text-sm text-gray-500 hover:text-black hover:font-semibold transition-all duration-200"
+        >
+          {item.title}
+        </a>
+      ))
+    }
+  </div>
+</footer>

@@ -1,4 +1,6 @@
 ---
+import { MoveRight } from "lucide-astro";
+
 const items = [
   { title: "viewModelScope not found", slug: "viewModelScope-not-found" },
   { title: "Error index out of bound", slug: "viewModelScope-not-found" },
@@ -12,7 +14,7 @@ const items = [
 ];
 ---
 
-<div id="error-log" class="py-6 flex flex-col">
+<div id="error-log" class="py-12 flex flex-col">
   <h1 class="text-3xl font-semibold">Error Log</h1>
   <ul class="list-disc flex flex-col gap-1 ps-4 mt-4">
     {
@@ -28,4 +30,11 @@ const items = [
       ))
     }
   </ul>
+  <a
+    href="/error-log"
+    class="w-fit font-semibold leading-[18px] text-black flex flex-row items-end gap-1 mt-6 hover:underline underline-offset-4 transition-all duration-200"
+  >
+    All error logs
+    <MoveRight class="size-4" />
+  </a>
 </div>
