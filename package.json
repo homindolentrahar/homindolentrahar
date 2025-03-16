@@ -1,0 +1,22 @@
+{
+  "name": "homindolentrahar",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/svelte": "^7.0.6",
+    "@fontsource-variable/space-grotesk": "^5.2.5",
+    "@tailwindcss/vite": "^4.0.14",
+    "astro": "^5.5.2",
+    "lucide-astro": "^0.482.0",
+    "prettier-plugin-astro": "^0.14.1",
+    "svelte": "^5.23.0",
+    "tailwindcss": "^4.0.14",
+    "typescript": "^5.8.2"
+  }
+}

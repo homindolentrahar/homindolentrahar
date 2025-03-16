@@ -1,0 +1,18 @@
+---
+import HomeWorksItem from "./HomeWorksItem.astro";
+import { MoveRight } from "lucide-astro";
+---
+
+<div id="works" class="flex flex-col py-16">
+  <h1 class="text-3xl font-semibold">Works</h1>
+  <div class="grid grid-cols-3 gap-x-6 gap-y-4 mt-6">
+    {[1, 2, 3].map((_) => <HomeWorksItem />)}
+  </div>
+  <a
+    href="/works"
+    class="w-fit font-semibold leading-[18px] text-black flex flex-row items-end gap-1 mt-6 hover:underline underline-offset-4 transition-all duration-200"
+  >
+    All Works
+    <MoveRight class="size-4" />
+  </a>
+</div>

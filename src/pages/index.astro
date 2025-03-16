@@ -1,0 +1,17 @@
+---
+import Layout from "../layouts/Layout.astro";
+import HomeHeroSection from "../components/Home/HomeHeroSection.astro";
+import HomeNavbar from "../components/Home/HomeNavbar.astro";
+import HomeWorksSection from "../components/Home/HomeWorksSection.astro";
+import HomeAboutSection from "../components/Home/HomeAboutSection.astro";
+---
+
+<Layout>
+  <HomeNavbar />
+  <section class="flex flex-col">
+    <HomeHeroSection />
+    <HomeWorksSection />
+    <HomeAboutSection />
+    <div class="h-[720px] bg-gray-50"></div>
+  </section>
+</Layout>

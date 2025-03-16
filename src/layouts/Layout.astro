@@ -1,0 +1,23 @@
+---
+import "../styles/global.css";
+import "@fontsource-variable/space-grotesk";
+import HomeNavbar from "../components/Home/HomeNavbar.astro";
+---
+
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>homindolentrahar</title>
+  </head>
+  <body>
+    <main
+      class="flex flex-col place-self-center lg:w-6/12 h-screen overflow-visible"
+    >
+      <slot />
+    </main>
+  </body>
+</html>

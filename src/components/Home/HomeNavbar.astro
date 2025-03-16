@@ -1,0 +1,39 @@
+---
+import NavbarItem from "../NavbarItem.svelte";
+
+interface HomeNavbarMenu {
+  title: string;
+  path: string;
+}
+
+const menus: HomeNavbarMenu[] = [
+  {
+    title: "Works",
+    path: "works",
+  },
+  {
+    title: "About",
+    path: "about",
+  },
+  {
+    title: "Leet",
+    path: "leet",
+  },
+  {
+    title: "Error Log",
+    path: "error-log",
+  },
+];
+---
+
+<nav
+  class="bg-white border-b border-gray-100 w-full flex flex-row sticky top-0 z-50"
+>
+  {
+    menus.map((menu) => (
+      <NavbarItem client:load targetId={menu.path}>
+        {menu.title}
+      </NavbarItem>
+    ))
+  }
+</nav>

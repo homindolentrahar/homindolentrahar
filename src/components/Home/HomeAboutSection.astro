@@ -1,0 +1,65 @@
+---
+import { MoveRight } from "lucide-astro";
+
+interface SkillItem {
+  icon: string;
+  title: string;
+  values: string[];
+}
+
+const skills: SkillItem[] = [
+  {
+    icon: "📱",
+    title: "Mobile Development",
+    values: ["Android", "Jetpack Compose", "Flutter", "SwiftUI"],
+  },
+  {
+    icon: "🔗",
+    title: "Backend",
+    values: ["Go", "NodeJS", "REST API", "WebSocket", "RabbitMQ"],
+  },
+  {
+    icon: "🧱",
+    title: "Architecture",
+    values: ["MVVM", "Clean Architecture", "Modularization"],
+  },
+  {
+    icon: "🛠️",
+    title: "Tools",
+    values: ["Docker", "Firebase", "OneSignal"],
+  },
+];
+---
+
+<div id="about" class="flex flex-col py-16">
+  <h1 class="text-3xl font-semibold">About</h1>
+  <p class="text-sm mt-4 text-gray-500">
+    I have over a year experience working as Mobile Developer in Software house
+    or agency, contributing to app development and enchancement from powerhouse
+    company in various industry. Detail oriented and highly motivated,
+    comfortable with working on-site and remote, squad or solo. You go far, I'll
+    go further.
+  </p>
+  <div class="mt-6 flex flex-col gap-2">
+    {
+      skills.map((skill) => {
+        const content = `${skill.icon} ${skill.title}: `;
+
+        return (
+          <div class="grid grid-cols-[0.5fr_min-content_1fr] text-sm gap-x-4">
+            <span class="font-medium">{`${skill.icon} ${skill.title}`}</span>
+            <span>:</span>
+            <span>{skill.values.join(", ")}</span>
+          </div>
+        );
+      })
+    }
+  </div>
+  <a
+    href="/about"
+    class="w-fit font-semibold leading-[18px] text-black flex flex-row items-end gap-1 mt-6 hover:underline underline-offset-4 transition-all duration-200"
+  >
+    More about me
+    <MoveRight class="size-4" />
+  </a>
+</div>
