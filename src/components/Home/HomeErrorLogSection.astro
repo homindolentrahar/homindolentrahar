@@ -1,0 +1,31 @@
+---
+const items = [
+  { title: "viewModelScope not found", slug: "viewModelScope-not-found" },
+  { title: "Error index out of bound", slug: "viewModelScope-not-found" },
+  {
+    title: "Hilt is not configured properly",
+    slug: "viewModelScope-not-found",
+  },
+  { title: "Gradle build failed", slug: "viewModelScope-not-found" },
+  { title: "viewModelScope not found", slug: "viewModelScope-not-found" },
+  { title: "viewModelScope not found", slug: "viewModelScope-not-found" },
+];
+---
+
+<div id="error-log" class="py-6 flex flex-col">
+  <h1 class="text-3xl font-semibold">Error Log</h1>
+  <ul class="list-disc flex flex-col gap-1 ps-4 mt-4">
+    {
+      items.map((item) => (
+        <li>
+          <a
+            href={`error-log/${item.slug}`}
+            class="text-sm text-gray-400 hover:text-black hover:font-medium underline underline-offset-4 transition-all duration-200"
+          >
+            {item.title}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</div>

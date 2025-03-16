@@ -43,11 +43,11 @@ const items: LeetItem[] = [
           <div class="flex flex-col justify-start grow">
             <a
               href={`leet/${item.slug}`}
-              class="font-semibold hover:underline underline-offset-4"
+              class="font-semibold hover:underline underline-offset-4 w-fit"
             >
               {item.title}
             </a>
-            <p class="text-sm text-gray-500">Tags: {item.tags.join(", ")}</p>
+            <p class="text-xs text-gray-500">Tags: {item.tags.join(", ")}</p>
           </div>
           <p class="text-sm font-semibold">{item.difficulty}</p>
         </div>
