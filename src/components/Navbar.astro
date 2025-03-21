@@ -1,0 +1,41 @@
+---
+import NavbarItem from "./NavbarItem.svelte";
+import { MoveLeft } from "lucide-astro";
+
+export interface Props {
+  showBackToHome?: boolean;
+  navbarMenuList: NavbarMenu[];
+}
+
+export interface NavbarMenu {
+  title: string;
+  path: string;
+}
+
+const { showBackToHome = false, navbarMenuList: menus } = Astro.props;
+---
+
+<nav
+  class="bg-white border-b border-gray-100 w-6/12 flex flex-row items-center fixed top-0 transform translate-x-1/2 z-50"
+>
+  {
+    showBackToHome && (
+      <span class="p-4">
+        <a
+          href="/"
+          class="flex flex-row gap-2 items-center text-sm text-gray-500 hover:text-black hover:font-semibold transition-all duration-200"
+        >
+          <MoveLeft class="size-4" />
+          Back to Home
+        </a>
+      </span>
+    )
+  }
+  {
+    menus.map((menu) => (
+      <NavbarItem client:load targetId={menu.path}>
+        {menu.title}
+      </NavbarItem>
+    ))
+  }
+</nav>

@@ -2,6 +2,54 @@
 import "../styles/global.css";
 import "@fontsource-variable/space-grotesk";
 import Footer from "../components/Footer.astro";
+import WorksNavbar from "../components/works/WorksNavbar.astro";
+import Navbar, { type NavbarMenu } from "../components/Navbar.astro";
+
+const currentPath = Astro.url.pathname;
+
+console.log(currentPath);
+
+const homeNavbarMenu: NavbarMenu[] = [
+  {
+    title: "Works",
+    path: "works",
+  },
+  {
+    title: "About",
+    path: "about",
+  },
+  {
+    title: "Experience",
+    path: "experience",
+  },
+  {
+    title: "Leet",
+    path: "leet",
+  },
+  {
+    title: "Error Log",
+    path: "error-log",
+  },
+];
+
+const worksNavbarMenu: NavbarMenu[] = [];
+
+const navbarMenus: {
+  [key: string]: { showBackToHome?: boolean; navbarMenuList: NavbarMenu[] };
+} = {
+  "/": {
+    showBackToHome: false,
+    navbarMenuList: homeNavbarMenu,
+  },
+  "/works": {
+    showBackToHome: true,
+    navbarMenuList: worksNavbarMenu,
+  },
+  "/about": {
+    showBackToHome: true,
+    navbarMenuList: homeNavbarMenu,
+  },
+};
 ---
 
 <!doctype html>
@@ -14,6 +62,10 @@ import Footer from "../components/Footer.astro";
     <title>homindolentrahar</title>
   </head>
   <body>
+    <Navbar
+      showBackToHome={navbarMenus[currentPath].showBackToHome}
+      navbarMenuList={navbarMenus[currentPath].navbarMenuList}
+    />
     <main
       class="flex flex-col place-self-center lg:w-6/12 h-screen overflow-visible"
     >

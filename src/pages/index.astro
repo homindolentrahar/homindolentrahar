@@ -1,16 +1,38 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import HomeHeroSection from "../components/Home/HomeHeroSection.astro";
-import HomeNavbar from "../components/Home/HomeNavbar.astro";
-import HomeWorksSection from "../components/Home/HomeWorksSection.astro";
-import HomeAboutSection from "../components/Home/HomeAboutSection.astro";
-import HomeExpSection from "../components/Home/HomeExpSection.astro";
-import HomeLeetSection from "../components/Home/HomeLeetSection.astro";
-import HomeErrorLogSection from "../components/Home/HomeErrorLogSection.astro";
+import HomeHeroSection from "../components/home/HomeHeroSection.astro";
+import HomeWorksSection from "../components/home/HomeWorksSection.astro";
+import HomeAboutSection from "../components/home/HomeAboutSection.astro";
+import HomeExpSection from "../components/home/HomeExpSection.astro";
+import HomeLeetSection from "../components/home/HomeLeetSection.astro";
+import HomeErrorLogSection from "../components/home/HomeErrorLogSection.astro";
+import type { NavbarMenu } from "../components/Navbar.astro";
+
+const menus: NavbarMenu[] = [
+  {
+    title: "Works",
+    path: "works",
+  },
+  {
+    title: "About",
+    path: "about",
+  },
+  {
+    title: "Experience",
+    path: "experience",
+  },
+  {
+    title: "Leet",
+    path: "leet",
+  },
+  {
+    title: "Error Log",
+    path: "error-log",
+  },
+];
 ---
 
 <Layout>
-  <HomeNavbar />
   <section class="flex flex-col mt-8">
     <HomeHeroSection />
     <HomeWorksSection />

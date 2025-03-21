@@ -1,12 +1,15 @@
 ---
-import HomeWorksItem from "./HomeWorksItem.astro";
+import HomeWorksItem from "../works/WorkCardItem.astro";
 import { MoveRight } from "lucide-astro";
+import { getCollection } from "astro:content";
+
+const works = (await getCollection("works")).slice(0, 3);
 ---
 
 <div id="works" class="flex flex-col py-12">
   <h1 class="text-3xl font-semibold">Works</h1>
   <div class="grid grid-cols-3 gap-x-6 gap-y-4 mt-6">
-    {[1, 2, 3].map((_) => <HomeWorksItem />)}
+    {works.map((work) => <HomeWorksItem entry={work} showPortfolio={false} />)}
   </div>
   <a
     href="/works"
