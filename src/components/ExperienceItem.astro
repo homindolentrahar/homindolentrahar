@@ -1,0 +1,44 @@
+---
+import { toLocaleDateString } from "../utils/dateUtils";
+
+interface Props {
+  company: string;
+  companyUrl: string;
+  position: string;
+  startDate: Date;
+  endDate?: Date;
+  employmentType: string;
+  description: string[];
+}
+
+const {
+  company,
+  companyUrl,
+  position,
+  startDate,
+  endDate,
+  employmentType,
+  description,
+} = Astro.props;
+---
+
+<div class="grid grid-cols-[0.4fr_1fr] gap-x-16">
+  <a
+    href={companyUrl}
+    target="_blank"
+    class="font-medium hover:underline underline-offset-4 transition-all duration-200"
+  >
+    {company}
+  </a>
+  <div>
+    <p class="font-medium">{position}</p>
+    <p class="text-sm text-gray-500">
+      {
+        `${toLocaleDateString(startDate)} - ${endDate ? toLocaleDateString(endDate) : "Present"} • ${employmentType}`
+      }
+    </p>
+    <ul class="list-disc ps-6 text-sm mt-1">
+      {description.map((desc) => <li>{desc}</li>)}
+    </ul>
+  </div>
+</div>

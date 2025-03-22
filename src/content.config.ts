@@ -20,4 +20,20 @@ const works = defineCollection({
   }),
 });
 
-export const collections = { works };
+const experience = defineCollection({
+  loader: glob({ pattern: "**/*.json", base: "src/content/" }),
+  schema: z.object({
+    company: z.string(),
+    companyUrl: z.string(),
+    position: z.string(),
+    employmentType: z.enum(["Full-time", "Part-time", "Freelance"]),
+    startDate: z.string().transform((value) => new Date(value)),
+    endDate: z
+      .string()
+      .transform((value) => new Date(value))
+      .optional(),
+    description: z.array(z.string()),
+  }),
+});
+
+export const collections = { works, experience };

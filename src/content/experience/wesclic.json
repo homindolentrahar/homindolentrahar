@@ -1,0 +1,13 @@
+{
+  "company": "Wesclic Indonesia",
+  "companyUrl": "https://wesclic.com/",
+  "position": "Mobile Developer",
+  "employmentType": "Freelance",
+  "startDate": "2023-06-01",
+  "endDate": "2024-07-01",
+  "description": [
+    "Develop all feature from scratch, including UI/UX design's slicing, API integration, and bug fixing",
+    "Define and implement Architecture and coding standards for the project",
+    "Implement asynchronous data fetching and caching, reducing loading time by 25% with non-blocking UI"
+  ]
+}

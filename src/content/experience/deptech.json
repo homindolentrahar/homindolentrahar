@@ -1,0 +1,13 @@
+{
+  "company": "Deptech Digital Indonesia",
+  "companyUrl": "https://deptechdigital.com/",
+  "position": "Mobile Developer",
+  "employmentType": "Full-time",
+  "startDate": "2024-09-17",
+  "endDate": "2025-02-07",
+  "description": [
+    "Develop new boilerplate code generator with required config and dependencies, reducing setup and development time by 35%",
+    "Implement Clean Architecture and MVVM pattern, improving code readability and maintainability",
+    "Integrate CI/CD pipeline with CodeMagic, reducing manual build time and increasing deployment target coverage"
+  ]
+}

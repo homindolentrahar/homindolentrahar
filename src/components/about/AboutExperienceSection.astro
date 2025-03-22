@@ -1,0 +1,27 @@
+---
+import { getCollection } from "astro:content";
+import ExperienceItem from "../ExperienceItem.astro";
+
+const experiences = await getCollection("experience");
+---
+
+<div id="experience" class="flex flex-col py-12">
+  <h1 class="text-3xl font-semibold">Experience</h1>
+  <p class="text-sm text-gray-500 mt-4">
+    I have over a year experience working as Mobile Developer in Software house
+    or agency, contributing to app development and enchancement from powerhouse
+    company in various industry.
+  </p>
+
+  <div class="flex flex-col gap-y-4 mt-6">
+    {
+      experiences
+        .sort(
+          (a, b) =>
+            (b.data.startDate?.getDate() || 0) -
+            (a.data.startDate?.getDate() || 0),
+        )
+        .map((exp) => <ExperienceItem {...exp.data} />)
+    }
+  </div>
+</div>

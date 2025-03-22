@@ -1,0 +1,13 @@
+{
+  "company": "Suitmedia Digital Agency",
+  "companyUrl": "https://suitmedia.com/",
+  "position": "Mobile Developer",
+  "employmentType": "Freelance",
+  "startDate": "2022-12-01",
+  "endDate": "2023-02-01",
+  "description": [
+    "Implement asynchronous data fetching and caching, reducing loading data time by 20% with non-blocking UI",
+    "Deliver new features, increasing user engagement by 15%",
+    "Maintain 3y+ legacy codebase, improving code quality and performance and reducing bug report by 20%"
+  ]
+}
