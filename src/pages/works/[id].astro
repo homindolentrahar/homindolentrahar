@@ -1,0 +1,99 @@
+---
+import type { GetStaticPaths } from "astro";
+import Layout from "../../layouts/Layout.astro";
+import { getCollection } from "astro:content";
+import { render } from "astro:content";
+import { slugify } from "../../utils/slugify";
+import NavbarLayout from "../../components/NavbarLayout.astro";
+import NavbarItem from "../../components/NavbarItem.svelte";
+import { toLocaleDateString } from "../../utils/dateUtils";
+import Prose from "../../components/Prose.astro";
+
+export const getStaticPaths = (async () => {
+  const works = await getCollection("works");
+
+  return works.map((work) => ({
+    params: { id: slugify(work.data.name) },
+    props: { work },
+  }));
+}) satisfies GetStaticPaths;
+
+const { work } = Astro.props;
+const { Content } = await render(work);
+
+const menus = [
+  "Overview",
+  "Key Features",
+  "Process & Challenges",
+  "Conclusions",
+];
+
+const infoItems: { title: string; value: string }[] = [
+  {
+    title: "Duration",
+    value: `${toLocaleDateString(work.data.from)} - ${toLocaleDateString(work.data.to)}`,
+  },
+  {
+    title: "Role(s)",
+    value: work.data.roles.join(", "),
+  },
+  {
+    title: "Stacks",
+    value: work.data.stacks.join(", "),
+  },
+];
+---
+
+<Layout>
+  <NavbarLayout showBackToHome={true} previousPath="/works">
+    {
+      menus.map((menu) => (
+        <NavbarItem client:load targetId={slugify(menu)}>
+          {menu}
+        </NavbarItem>
+      ))
+    }
+  </NavbarLayout>
+  <section class="flex flex-col mt-16 py-8">
+    <div class="flex flex-col items-start">
+      <h5 class="font-bold underline underline-offset-8">
+        {work.data.workType.toString().toUpperCase()}
+      </h5>
+      <h1 class="text-3xl font-semibold mt-4">{work.data.name}</h1>
+      <p class="text-sm mt-2 line-clamp-3 text-gray-500">{work.data.desc}</p>
+
+      <div class="grid grid-cols-[0.5fr_1fr] gap-y-1 gap-x-20 mt-6">
+        {
+          infoItems.map((item) => (
+            <>
+              <p class="text-sm text-gray-500">{item.title}</p>
+              <p class="text-sm font-medium">: {item.value}</p>
+            </>
+          ))
+        }
+      </div>
+
+      <p class="font-medium mt-4">Resources:</p>
+      <ul class="list-disc mt-1">
+        {
+          work.data.portfolio.map((item) => (
+            <li class="ms-4">
+              <a
+                href={item.url}
+                target="_blank"
+                class="text-sm text-gray-500 hover:text-black hover:font-medium hover:underline underline-offset-4 transition-all duration-200"
+              >
+                {item.type}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+    <div class="mt-8">
+      <Prose>
+        <Content />
+      </Prose>
+    </div>
+  </section>
+</Layout>

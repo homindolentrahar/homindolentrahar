@@ -8,6 +8,7 @@ const works = defineCollection({
     desc: z.string(),
     from: z.date(),
     to: z.date().optional(),
+    workType: z.enum(["Personal", "Professional"]),
     roles: z.array(z.string()),
     stacks: z.array(z.string()),
     portfolio: z.array(

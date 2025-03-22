@@ -1,0 +1,39 @@
+---
+import { MoveLeft } from "lucide-astro";
+
+export interface Props {
+  showBackToHome?: boolean;
+  backTitle?: string;
+  previousPath?: string;
+}
+
+export interface NavbarMenu {
+  title: string;
+  path: string;
+}
+
+const {
+  showBackToHome = false,
+  previousPath = "/",
+  backTitle = "Back",
+} = Astro.props;
+---
+
+<nav
+  class="bg-white border-b border-gray-100 w-6/12 flex flex-row items-center fixed top-0 transform z-50"
+>
+  {
+    showBackToHome && (
+      <span class="p-4 flex flex-row border-r border-gray-100">
+        <a
+          href={previousPath}
+          class="flex flex-row gap-2 items-center text-sm text-gray-500 hover:text-black hover:font-semibold transition-all duration-200"
+        >
+          <MoveLeft class="size-4" />
+          {backTitle}
+        </a>
+      </span>
+    )
+  }
+  <slot />
+</nav>

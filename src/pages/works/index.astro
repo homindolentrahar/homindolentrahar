@@ -1,4 +1,5 @@
 ---
+import NavbarLayout from "../../components/NavbarLayout.astro";
 import WorkCardItem from "../../components/works/WorkCardItem.astro";
 import Layout from "../../layouts/Layout.astro";
 import { getCollection } from "astro:content";
@@ -7,18 +8,17 @@ const works = await getCollection("works");
 ---
 
 <Layout>
-  <section class="flex flex-col mt-8 lg:min-h-[640px]">
-    <div class="py-12">
-      <div class="max-w-10/12 flex flex-col items-start">
-        <h1 class="text-3xl font-semibold">Works</h1>
-        <p class="text-sm text-gray-500 mt-2">
-          Collection of my works, some are personal and others are professional
-          with highly censorship due to NDA.
-        </p>
-      </div>
-      <div class="grid grid-cols-3 gap-x-6 gap-y-4 mt-6">
-        {works.map((work) => <WorkCardItem entry={work} />)}
-      </div>
+  <NavbarLayout showBackToHome={true} />
+  <section class="flex flex-col mt-16 py-8">
+    <div class="max-w-10/12 flex flex-col items-start">
+      <h1 class="text-3xl font-semibold">Works</h1>
+      <p class="text-sm text-gray-500 mt-2">
+        Collection of my works, some are personal and others are professional
+        with highly censorship due to NDA.
+      </p>
+    </div>
+    <div class="grid grid-cols-3 gap-x-6 gap-y-4 mt-6">
+      {works.map((work) => <WorkCardItem entry={work} />)}
     </div>
   </section>
 </Layout>

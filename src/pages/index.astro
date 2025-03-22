@@ -6,33 +6,23 @@ import HomeAboutSection from "../components/home/HomeAboutSection.astro";
 import HomeExpSection from "../components/home/HomeExpSection.astro";
 import HomeLeetSection from "../components/home/HomeLeetSection.astro";
 import HomeErrorLogSection from "../components/home/HomeErrorLogSection.astro";
-import type { NavbarMenu } from "../components/Navbar.astro";
+import NavbarLayout from "../components/NavbarLayout.astro";
+import NavbarItem from "../components/NavbarItem.svelte";
+import { slugify } from "../utils/slugify";
 
-const menus: NavbarMenu[] = [
-  {
-    title: "Works",
-    path: "works",
-  },
-  {
-    title: "About",
-    path: "about",
-  },
-  {
-    title: "Experience",
-    path: "experience",
-  },
-  {
-    title: "Leet",
-    path: "leet",
-  },
-  {
-    title: "Error Log",
-    path: "error-log",
-  },
-];
+const menus = ["Works", "About", "Experience", "Leet", "Error Log"];
 ---
 
 <Layout>
+  <NavbarLayout>
+    {
+      menus.map((menu) => (
+        <NavbarItem client:load targetId={slugify(menu)}>
+          {menu}
+        </NavbarItem>
+      ))
+    }
+  </NavbarLayout>
   <section class="flex flex-col mt-8">
     <HomeHeroSection />
     <HomeWorksSection />

@@ -2,12 +2,7 @@
 import "../styles/global.css";
 import "@fontsource-variable/space-grotesk";
 import Footer from "../components/Footer.astro";
-import WorksNavbar from "../components/works/WorksNavbar.astro";
 import Navbar, { type NavbarMenu } from "../components/Navbar.astro";
-
-const currentPath = Astro.url.pathname;
-
-console.log(currentPath);
 
 const homeNavbarMenu: NavbarMenu[] = [
   {
@@ -62,10 +57,10 @@ const navbarMenus: {
     <title>homindolentrahar</title>
   </head>
   <body>
-    <Navbar
+    <!-- <Navbar
       showBackToHome={navbarMenus[currentPath].showBackToHome}
       navbarMenuList={navbarMenus[currentPath].navbarMenuList}
-    />
+    /> -->
     <main
       class="flex flex-col place-self-center lg:w-6/12 h-screen overflow-visible"
     >
